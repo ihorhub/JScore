@@ -175,4 +175,101 @@
 // })
 
 //=============КЛАССНАЯ РАБОТА=================
-// завтра при можливості допишу інші завдання, там ніби те саме..
+
+
+// let cars = [ {producer:"subaru",model: "wrx",year: 2010, color:"blue",type: "sedan",engine: "ej204x",volume: 2,power: 400},
+// {producer:"subaru",model: "legacy",year: 2007, color:"silver",type: "sedan",engine: "ez30",volume: 3,power: 250},
+// {producer:"subaru",model: "tribeca",year: 2011, color:"white",type: "jeep",engine: "ej20",volume: 2,power: 300},
+// {producer:"subaru",model: "leone",year: 1998, color:"yellow",type: "sedan",engine: "ez20x",volume: 2,power: 140},
+// {producer:"subaru",model: "impreza",year: 2014, color:"red",type: "sedan",engine: "ej204x",volume: 2,power: 200},
+// {producer:"subaru",model: "outback",year: 2014, color:"red",type: "hachback",engine: "ej204",volume: 2,power: 165},
+// {producer:"bmw",model: "115",year: 2013, color:"red",type: "hachback",engine: "f15",volume: 1.5,power: 120},
+// {producer:"bmw",model: "315",year: 2010, color:"white",type: "sedan",engine: "f15",volume: 1.5, power: 120},
+// {producer:"bmw",model: "650",year: 2009, color:"black",type: "coupe",engine: "f60",volume: 6,power: 350},
+// {producer:"bmw",model: "320",year: 2012, color:"red",type: "sedan",engine: "f20",volume: 2,power: 180},
+// {producer:"mercedes",model: "e200",year: 1990, color:"silver",type: "sedan",engine: "eng200",volume: 2,power: 180},
+// {producer:"mercedes",model: "e63",year: 2017, color:"yellow",type: "sedan",engine: "amg63",volume:3,power: 400},
+// {producer:"mercedes",model: "c250",year: 2017, color:"red",type: "sedan",engine: "eng25",volume: 2.5,power: 230} ];
+//
+// Відфільтрувати масив за наступними крітеріями :
+//
+// - двигун більше 3х літрів
+// - двигун = 2л
+// - виробник мерс
+// - двигун більше 3х літрів + виробник мерседес
+// - двигун більше 3х літрів + виробник субару
+// - сили більше ніж 300
+// - сили більше ніж 300 + виробник субару
+// - мотор серіі ej
+// - сили більше ніж 300 + виробник субару + мотор серіі ej
+// - двигун меньше 3х літрів + виробник мерседес
+// - двигун більше 2л + сили більше 250
+// - сили більше 250  + виробник бмв
+
+
+// let volumeCar = cars.filter(item => item.volume > 3)
+// console.log(volumeCar)
+
+// let volumeCar = cars.filter(item => item.volume === 2)
+// console.log(volumeCar)
+
+// let volumeCar = cars.filter(item => item.producer==="mercedes" )
+// console.log(volumeCar)
+
+// let volumeCar = cars.filter(item => item.producer==="mercedes"&&item.volume>=3 )
+// console.log(volumeCar)
+
+// let volumeCar = cars.filter(item => item.producer==="subaru"&&item.volume>=3 )
+// console.log(volumeCar)
+
+// let powerCar = cars.filter(item => item.producer === "subaru" && item.power > 300)
+// console.log(powerCar)
+
+// let engineCar = cars.filter(item => item.engine.startsWith('ej'))
+// console.log(engineCar)
+
+
+// let engineCar = cars.filter(item => item.engine.startsWith('ej') && item.power >= 300 && item.producer === "subaru")
+// console.log(engineCar)
+
+
+// let volumeCar = cars.filter(item => item.producer === "mercedes" && item.volume < 3)
+// console.log(volumeCar)
+
+// let volumeCar = cars.filter(item => item.power > 250 && item.volume > 2)
+// console.log(volumeCar)
+
+// let volumeCar = cars.filter(item => item.power > 250 && item.producer === "bmw")
+// console.log(volumeCar)
+
+
+
+///Задача: дан отсортированный по возрастанию массив целых чисел. Необходимо вернуть наименьший и наибольший индекс заданного элемента.
+//
+// Входные данные: arr — массив целых чисел значения которых по модулю не больше 10. Размер массива не более 10 элементов.
+//
+// Вывод: наибольший и наименьший индекс в массиве заданного элемента. Если такого элемента нет в массиве, выведите -1.
+//
+//
+//
+// Пример:
+//
+// Arr = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14]
+//
+// 1. Key = 1
+//
+// Answer: MinIndex = 0, MaxIndex = 0.
+//
+// 2. Key = 4
+//
+// Answer: MinIndex = 3, MaxIndex = 6.
+
+// let Arr = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14]
+//
+// function firstAndLast(array, el) {
+//     let min = array.indexOf(el)
+//     let max = array.lastIndexOf(el)
+//     console.log(`Answer: MinIndex =${min},MaxIndex =${max}`)
+// }
+//
+// firstAndLast(Arr, 4)
