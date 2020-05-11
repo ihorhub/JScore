@@ -7,5 +7,5 @@ let text = document.getElementById('text');
 hider.onclick = hide()
 
 function hide() {
-    text.hidden = true;
+   text.hidden = true;
 }
