@@ -163,7 +163,7 @@
 // кинути алерт з попередженням.
 // Перевірку робити при натисканні на кнопку
 
-// let badWord=['сто копанок чортів тобі в печінку',
+// let badWord=['сто копанок чортів тобі в печінку', /// не робить, доступався рызними способами (форм4,нейм тд
 //     'під три чорти',
 //     'бодай тебе чорти вхопили',
 // 'Ти, гімно нероздушене!',
@@ -171,21 +171,22 @@
 // 'дідька лисого',
 // 'дідько б його взяв (вхопив)',
 // 'де його чорти понесли?']
-// let content=document.getElementsByName('text')
+// let content=document.getElementById('input4')
 // let btn=document.getElementById('btn4')
+// let myArray=JSON.parse(JSON.stringify(badWord))
 // btn.onclick=()=>{
-//     for (const string of badWord) {
-//         if (content===string){
+//     for (const string of myArray) {
+//         if (string===content){
 //             alert('STOP!!! зупини лайку')
 //
 //         } else
 //         {
 //             alert('continue writing')
-//             return
-//     }
 //
 //     }
-// }
+//         return
+//     }
+}
 
 //создать скрипт, который берет считывает на странице (rules.html)
 // текст и делает сбоку меню-оглавление по всем заголовкам которые есть в тексте.
@@ -208,3 +209,81 @@
 // content.style.float = 'left'
 // wrap.style.width = '60%'
 // wrap.style.float = 'left'
+
+
+//зять массив пользователей
+// Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как вместе так и по отдельности.
+// 1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
+// 2й - оставляет старше 29 лет включительно
+// 3й - оставляет тех у кого город киев
+// Данные выводить в документ
+//
+// let usersWithAddress = [
+//                 {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+//
+//                 {id:2,name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
+//
+//                 {id:3,name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
+//
+//                 {id:4,name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
+//
+//                 {id:5,name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
+//
+//                 {id:6,name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
+//
+//                 {id:7,name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
+//
+//                 {id:8,name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
+//
+//                 {id:9,name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
+//
+//                 {id:10,name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+//
+//                 {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
+//
+//             ];
+// let content=document.getElementById('content6')
+// let userDiv=document.createElement('div')
+// userDiv.appendChild(renderContent(usersWithAddress))
+// userDiv.className='user'
+//
+// let input1=document.createElement('input')
+// let input2=document.createElement('input')
+// let input3=document.createElement('input')
+// let label1=document.createElement('label')
+// let label2=document.createElement('label')
+// let label3=document.createElement('label')
+// let button=document.createElement('button')
+// label1.innerText='со статусом false'
+// label2.innerText='старше 29 лет включительно'
+// label3.innerText=' у кого город киев'
+// button.innerText='Filter ON'
+// input1.type='checkbox'
+// input2.type='checkbox'
+// input3.type='checkbox'
+// content.appendChild(userDiv)
+// content.appendChild(label1)
+// content.appendChild(label2)
+// content.appendChild(label3)
+// content.appendChild(input1)
+// content.appendChild(input2)
+// content.appendChild(input3)
+// content.appendChild(button)
+// button.onclick=ev => {
+//     let myArray=JSON.parse(JSON.stringify(usersWithAddress))
+//     if(input1.checked)myArray=myArray.filter(value => !value.status)
+//     if(input2.checked)myArray=myArray.filter(value => value.age>=29)
+//     if(input3.checked)myArray=myArray.filter(value => value.city==="Kyiv")
+//     userDiv.innerText=''
+//     userDiv.appendChild(renderContent(myArray))
+// }
+//
+// function renderContent (array) {
+// let main=document.createElement('div')
+//     array.forEach(item=>{
+//         let  div=document.createElement('div')
+//         div.innerText=JSON.stringify(item)
+//         main.appendChild(div)
+//     })
+//     return main
+// }
