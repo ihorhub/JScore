@@ -162,31 +162,37 @@
 // Якщо людина вводить слово і воно міститься в масиві не цензурних слів
 // кинути алерт з попередженням.
 // Перевірку робити при натисканні на кнопку
+//сто копанок чортів тобі в печінку', /// не робить, доступався рызними способами (форм4,нейм тд
 
-// let badWord=['сто копанок чортів тобі в печінку', /// не робить, доступався рызними способами (форм4,нейм тд
-//     'під три чорти',
+
+//
+//
+// let badWord=['під три чорти',
 //     'бодай тебе чорти вхопили',
-// 'Ти, гімно нероздушене!',
-// 'ах ти свиняче рило!',
-// 'дідька лисого',
-// 'дідько б його взяв (вхопив)',
-// 'де його чорти понесли?']
-// let content=document.getElementById('input4')
-// let btn=document.getElementById('btn4')
-// let myArray=JSON.parse(JSON.stringify(badWord))
-// btn.onclick=()=>{
-//     for (const string of myArray) {
-//         if (string===content){
-//             alert('STOP!!! зупини лайку')
+//     'Ти, гімно нероздушене!',
+//     'ах ти свиняче рило!',
+//     'дідька лисого',
+//     'дідько б його взяв (вхопив)',
+//     'де його чорти понесли?  ']
 //
-//         } else
-//         {
-//             alert('continue writing')
+// let btn = document.getElementById('btn4')
+//
+// btn.onclick = () => {
+//     let wasBAdWord = false
+//
+//     let content = document.getElementById('input4').value
+//
+//     for (const string of badWord) {
+//         if (content === string) {
+//             wasBAdWord = true
+//         }
 //
 //     }
-//         return
-//     }
-}
+//     wasBAdWord
+//         ? alert('STOP!!! зупини лайку')
+//         : alert('continue writing')
+// }
+
 
 //создать скрипт, который берет считывает на странице (rules.html)
 // текст и делает сбоку меню-оглавление по всем заголовкам которые есть в тексте.
