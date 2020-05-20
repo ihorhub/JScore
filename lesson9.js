@@ -20,102 +20,102 @@
 //     Або йдучи на обід ви забули гаманець і лишились голодні.
 
 
-let chance = 0.24
-
-
-function myDay (massage) {
-    console.log('stand Up')
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (Math.random()>chance) {
-                resolve('massage')
-            }
-            else {
-                reject('Prospav')
-            }
-        }, 2000)
-    })
-}
-function breakfast(breakF) {
-    console.log('time for eat my breakfast')
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if ( Math.random()>chance) {
-                resolve('breakF')
-            }
-            else {
-                reject('holodilnyk poronuy')
-            }
-        }, 2000)
-    })
-}
-
-function goToWork(gowork) {
-    console.log('go to work')
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (Math.random()>chance) {
-                resolve('gowork')
-            }
-            else {
-                reject('raine on street')
-            }
-        }, 2000)
-    })
-}
-
-function work(todowork) {
-    console.log('you mast work ')
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (Math.random()>chance) {
-                resolve('todowork')
-            }
-            else {
-                reject('karantine!!! stay at home')
-            }
-        }, 2000)
-    })
-}
-function coofeBreake(typecoffe) {
-    console.log('time to coffe')
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (Math.random()>chance) {
-                resolve('typecoffe')
-            }
-            else {
-                reject('coffemachine is broken')
-            }
-        }, 2000)
-    })
-}
-function goTOhome(home) {
-    console.log('time go to home')
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (Math.random()>chance) {
-                resolve('home')
-            }
-            else {
-                reject('must stay at home')
-            }
-        }, 2000)
-    })
-}
-function godinner( dinner) {
-    console.log('time for eat my dinner')
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if ( Math.random()>chance) {
-                resolve('diner')
-            }
-            else {
-                reject('vechri ne bude')
-            }
-        }, 2000)
-    })
-}
+// let chance = 0.24
+//
+//
+// function myDay (massage) {
+//     console.log('stand Up')
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (Math.random()>chance) {
+//                 resolve('massage')
+//             }
+//             else {
+//                 reject('Prospav')
+//             }
+//         }, 2000)
+//     })
+// }
+// function breakfast(breakF) {
+//     console.log('time for eat my breakfast')
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if ( Math.random()>chance) {
+//                 resolve('breakF')
+//             }
+//             else {
+//                 reject('holodilnyk poronuy')
+//             }
+//         }, 2000)
+//     })
+// }
+//
+// function goToWork(gowork) {
+//     console.log('go to work')
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (Math.random()>chance) {
+//                 resolve('gowork')
+//             }
+//             else {
+//                 reject('raine on street')
+//             }
+//         }, 2000)
+//     })
+// }
+//
+// function work(todowork) {
+//     console.log('you mast work ')
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (Math.random()>chance) {
+//                 resolve('todowork')
+//             }
+//             else {
+//                 reject('karantine!!! stay at home')
+//             }
+//         }, 2000)
+//     })
+// }
+// function coofeBreake(typecoffe) {
+//     console.log('time to coffe')
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (Math.random()>chance) {
+//                 resolve('typecoffe')
+//             }
+//             else {
+//                 reject('coffemachine is broken')
+//             }
+//         }, 2000)
+//     })
+// }
+// function goTOhome(home) {
+//     console.log('time go to home')
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (Math.random()>chance) {
+//                 resolve('home')
+//             }
+//             else {
+//                 reject('must stay at home')
+//             }
+//         }, 2000)
+//     })
+// }
+// function godinner( dinner) {
+//     console.log('time for eat my dinner')
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if ( Math.random()>chance) {
+//                 resolve('diner')
+//             }
+//             else {
+//                 reject('vechri ne bude')
+//             }
+//         }, 2000)
+//     })
+// }
 
 // myDay(true)
 //     .then(result => {
@@ -147,29 +147,165 @@ function godinner( dinner) {
 //         console.log(reason + ' :ERRROR');
 //     })
 
-async function asFunc() {
-    try {
-        let day = await myDay(true);
-        console.log(day);
+// async function asFunc() {
+//     try {
+//         let day = await myDay(true);
+//         console.log(day);
+//
+//         let brF = await breakfast();
+//         console.log(brF);
+//         let goo = await goToWork();
+//         console.log(goo);
+//         let HW = await work();
+//         console.log(HW);
+//         let latte = await coofeBreake();
+//         console.log(latte);
+//         let gohome = await goTOhome();
+//         console.log(gohome);
+//         let mydiner = await godinner();
+//         console.log(mydiner);
+//
+//
+//     } catch (err) {
+//         console.error('OOPS ERROR: ' + err);
+//     }
+// }
+//
+// asFunc()
 
-        let brF = await breakfast();
-        console.log(brF);
-        let goo = await goToWork();
-        console.log(goo);
-        let HW = await work();
-        console.log(HW);
-        let latte = await coofeBreake();
-        console.log(latte);
-        let gohome = await goTOhome();
-        console.log(gohome);
-        let mydiner = await godinner();
-        console.log(mydiner);
+
+// CALLBACK
 
 
-    } catch (err) {
-        console.error('OOPS ERROR: ' + err);
+let chance = 0.01
+function myDay (chance,cb) {
+    console.log('stand Up')
+        setTimeout(() => {
+            if (Math.random()>chance) {
+                cb('massage budilnik')
+            }
+            else {
+               cb('Prospav')
+            }
+        }, 1000)
     }
-}
 
-asFunc()
+function breakfast(chance,cb) {
+    console.log('time to eat my breakfast')
+
+        setTimeout(() => {
+            if ( Math.random()>chance) {
+                cb('coffe om-nom-nom')
+            }
+            else {
+                cb('holodilnyk poroznuy ')
+            }
+        }, 2000)
+    }
+
+
+function goToWork(chance,cb) {
+    console.log('go to work')
+
+        setTimeout(() => {
+            if (Math.random()>chance) {
+                cb('gowork on my car')
+            }
+            else {
+                cb('rain on street')
+            }
+        }, 2500)
+    }
+
+
+function work(chance,cb) {
+    console.log('you must work ')
+        setTimeout(() => {
+            if (Math.random()>chance) {
+                cb('hard todowork ')
+            }
+            else {
+                cb('Quarantine!!! stay at home')
+            }
+        }, 2000)
+    }
+
+function coofeBreake(chance,cb) {
+    console.log('time to coffe')
+        setTimeout(() => {
+            if (Math.random()>chance) {
+                cb(' drink latte ')
+            }
+            else {
+                cb('coffemachine is broken')
+            }
+        }, 1000)
+    }
+
+function goTOhome(chance,cb) {
+    console.log('time go to home')
+           setTimeout(() => {
+            if (Math.random()>chance) {
+                cb('home play with child')
+            }
+            else {
+                cb('must stay at home')
+            }
+        }, 3000)
+    }
+
+function godinner( chance,cb) {
+    console.log('time for eat my dinner')
+        setTimeout(() => {
+            if ( Math.random()>chance) {
+                cb('diner om nom -nom')
+            }
+            else {
+                cb('vechri ne bude')
+            }
+        }, 2000)
+    }
+
+// працювало,йшло і по if,  а тепер тільки по елсу,і міняю  значення chance. і що мені в першому аргументі писати,
+// щось пробую підсталяти а все рівно одинаковий результатю не зовсім розумію
+
+myDay('shrt',(text)=>{
+
+    console.log(text);
+    breakfast('value',(text)=>{
+        console.log(text);
+        goToWork('take my car',(text)=>{
+            console.log(text)
+            work('todowork',(text)=>{
+                console.log(text)
+                coofeBreake('typecoffe',(text)=>{
+                    console.log(text);
+                    goTOhome('home',(text)=>{
+                        console.log(text);
+                        godinner('сирьтпро',(text)=>{
+                            console.log(text)
+                        })
+                    })
+                })
+            })
+        })
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
