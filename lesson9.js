@@ -177,8 +177,8 @@
 // CALLBACK
 
 
-let chance = 0.01
-function myDay (chance,cb) {
+let chance = 0.3
+function myDay (value,cb) {
     console.log('stand Up')
         setTimeout(() => {
             if (Math.random()>chance) {
@@ -190,12 +190,11 @@ function myDay (chance,cb) {
         }, 1000)
     }
 
-function breakfast(chance,cb) {
+function breakfast(value,cb) {
     console.log('time to eat my breakfast')
-
         setTimeout(() => {
             if ( Math.random()>chance) {
-                cb('coffe om-nom-nom')
+                cb('coffe and om-nom-nom')
             }
             else {
                 cb('holodilnyk poroznuy ')
@@ -204,9 +203,8 @@ function breakfast(chance,cb) {
     }
 
 
-function goToWork(chance,cb) {
+function goToWork(value,cb) {
     console.log('go to work')
-
         setTimeout(() => {
             if (Math.random()>chance) {
                 cb('gowork on my car')
@@ -218,7 +216,7 @@ function goToWork(chance,cb) {
     }
 
 
-function work(chance,cb) {
+function work(value,cb) {
     console.log('you must work ')
         setTimeout(() => {
             if (Math.random()>chance) {
@@ -230,7 +228,7 @@ function work(chance,cb) {
         }, 2000)
     }
 
-function coofeBreake(chance,cb) {
+function coofeBreake(value,cb) {
     console.log('time to coffe')
         setTimeout(() => {
             if (Math.random()>chance) {
@@ -242,7 +240,7 @@ function coofeBreake(chance,cb) {
         }, 1000)
     }
 
-function goTOhome(chance,cb) {
+function goTOhome(value,cb) {
     console.log('time go to home')
            setTimeout(() => {
             if (Math.random()>chance) {
@@ -254,7 +252,7 @@ function goTOhome(chance,cb) {
         }, 3000)
     }
 
-function godinner( chance,cb) {
+function godinner( value,cb) {
     console.log('time for eat my dinner')
         setTimeout(() => {
             if ( Math.random()>chance) {
@@ -269,12 +267,12 @@ function godinner( chance,cb) {
 // працювало,йшло і по if,  а тепер тільки по елсу,і міняю  значення chance. і що мені в першому аргументі писати,
 // щось пробую підсталяти а все рівно одинаковий результатю не зовсім розумію
 
-myDay('shrt',(text)=>{
+myDay('chance',(text)=>{
 
     console.log(text);
-    breakfast('value',(text)=>{
+    breakfast('suda pushu dho xochu',(text)=>{
         console.log(text);
-        goToWork('take my car',(text)=>{
+        goToWork('chance',(text)=>{
             console.log(text)
             work('todowork',(text)=>{
                 console.log(text)
