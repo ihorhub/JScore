@@ -333,33 +333,28 @@
 // Если светофор красный и машин нет- вывести "стой все рано".
 // Если светофор красный - и машины есть вывести "стой и жди".
 // Если светофор в аварийном режиме вывести "делай что хочешь".
-let isRoadClear = confirm('isRoadClear');
-console.log(isRoadClear);
-let color = prompt('color green, yellow, red');
-if (color === 'green' && isRoadClear) {
-    console.log('GO!')
-}
-else if  ('green'|| isRoadClear){
-    console.log('go after car')
-    } ;
-if (color === 'yellow' && isRoadClear) {
-    console.log('STOP!!');
-}
-else if  ('yellow'|| isRoadClear){
-    console.log('check it out all the time')
-}
-if (color === 'red' && isRoadClear) {
-    console.log('ALL time STOP!!!');
-}
-else if  ('red'|| isRoadClear){
-    console.log('stop and wait');
-}
-if (color===undefined|| isRoadClear){
-    console.log('do what you want');
-
-}
-// } else if (color === 'yellow') {
-//     console.log('подожди пока нарушители проедут')
-// } else if (color === 'red') {
-//     console.log('жди')
+// let isRoadClear = confirm('isRoadClear');
+// console.log(isRoadClear);
+// let color = prompt('color green, yellow, red');
+// if (color === 'green' && isRoadClear) {
+//     console.log('GO!')
+// }
+// else if  ('green'|| isRoadClear){
+//     console.log('go after car')
+//     } ;
+// if (color === 'yellow' && isRoadClear) {
+//     console.log('STOP!!');
+// }
+// else if  ('yellow'|| isRoadClear){
+//     console.log('check it out all the time')
+// }
+// if (color === 'red' && isRoadClear) {
+//     console.log('ALL time STOP!!!');
+// }
+// else if  ('red'|| isRoadClear){
+//     console.log('stop and wait');
+// }
+// if (color===undefined|| isRoadClear){
+//     console.log('do what you want');
+//
 // }
