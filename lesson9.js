@@ -264,13 +264,13 @@ function godinner( value,cb) {
         }, 2000)
     }
 
-// працювало,йшло і по if,  а тепер тільки по елсу,і міняю  значення chance. і що мені в першому аргументі писати,
-// щось пробую підсталяти а все рівно одинаковий результатю не зовсім розумію
+
+
 
 myDay('chance',(text)=>{
 
     console.log(text);
-    breakfast('suda pushu dho xochu',(text)=>{
+    breakfast('suda pushu vse sho xochu',(text)=>{
         console.log(text);
         goToWork('chance',(text)=>{
             console.log(text)
