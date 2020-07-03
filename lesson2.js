@@ -149,22 +149,22 @@
 
 
 //Відтворити роботу годинника, відрахувавши  2 години 20 хвилини (3 цикли! 1й - години, 2й - хвилини, 3й - секунди)
-// for (let hours = 0; hours < 60; hours++) {
-//     for (let minutes = 0; minutes < 60; minutes++)
-//         for (let seconds = 0; seconds < 60; seconds++)
-//             if (seconds === 0 && minutes === 20 && hours === 2) {
-//                 console.log(hours, minutes, seconds)
-//
-//
-//             }
+
+
+// for (let hours = 0; hours < 24; hours++) {
+//     if (hours == 2) {
+//         break
+//     }
+//     for (let minutes = 0; minutes < 60; minutes++) {
+//         if (hours == 2 && minutes === 20) {
+//             break
+//         }
+//         for (let seconds = 0; seconds < 60; seconds++) {
+//             console.log(`hour ${hours} minute ${minutes} second ${seconds}`)
+//         }
+//     }
 // }
-// for (let hours = 0; hours < 2; hours++) {
-//     for (let minutes = 0; minutes < 20; minutes++)
-//         for (let seconds = 0; seconds < 60; seconds++)
-//              console.log(hours, minutes, seconds)
-//
-// }
-//
+
 
 //  Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for зібрати всі букви в слово.
 //
@@ -410,7 +410,7 @@
 
 // let arr = []
 // for (let i = 0; i < 100; i++) {
-//     let answer = Math.floor(Math.random()*1000)
+//     let answer = Math.floor(Math.random()*(732-8)+8)
 //         arr.push(answer)
 // }
 // console.log(arr)
@@ -510,4 +510,4 @@
 //         array.push(arrElement);
 //     }
 // }
-// console.log(array);
+// console.log(array)
