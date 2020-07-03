@@ -479,5 +479,35 @@
 
 
 // 3 створити масив з рандомними значеннями, помножити всі його елементи на 5 та перемістити їх в інший масив.
+
+// let arr = [];
+// let newArr = [];
+// for (let i = 0; i < 100; i++) {
+//     let numbers = Math.floor(Math.random() * 100) * 5
+//     arr.push(numbers)
+//     newArr = arr
+// }
+// console.log(arr)
+// console.log(newArr);
+
 // 4 створити масив з будь якими значеннями (стрінги, числа, і тд...). пройтись по ньому, і якщо об'єкт є числом,
 // додати його в інший масив.
+// let arr = [];
+// let array = []
+// arr[0] = 123;
+// arr[1] = '123';
+// arr[2] = true;
+// arr[3] = 'hello world';
+// arr[4] = 123 + 'asd';
+// arr[5] = 'false';
+// arr[6] = 677;
+// arr[7] = 'number';
+// arr[8] = 'qwe789';
+// arr[9] = 4645;
+// for (let i = 0; i < arr.length; i++) {
+//     const arrElement = arr[i];
+//     if (typeof arrElement === 'number') {
+//         array.push(arrElement);
+//     }
+// }
+// console.log(array);
