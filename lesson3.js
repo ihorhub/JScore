@@ -371,18 +371,6 @@
 //- За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement,
 // розділивши всі властивості по своїм блокам , блок з адресою зробити окремим блоком, з блоками для кожної властивості
 
-let users = [{name:'vasya',age: 31,status:false,address:{city: 'Lviv', country: 'Ukraine', street: 'Shevchenko', houseNumber: 1}},
-    {name:'petya',age: 30,status: true, address: {city: 'New York', country:'USA',street:'East str', houseNumber: 21}},
-    {name:'kolya',age: 29,status: true,address: {city: 'Budapest', country: 'Hungary', street: 'Kuraku', houseNumber: 78}},
-    {name: 'olya',age: 28,status: false,address: {city: 'Prague', country: 'Czech', street: 'Paster', houseNumber: 56}},
-    {name: 'max',age: 30,status: true,address: {city: 'Istanbul', country: 'Turkey', street: 'Mikar', houseNumber: 39}},
-    {name: 'anya',age: 31,status: false,address: {city: 'Rio', country: 'Brasil', street:'Ronaldi', houseNumber: 5}},
-    {name: 'oleg',age: 28,status: false,address: {city: 'Montreal', country: 'Canada',treet:'Acusto',houseNumber: 90}},
-    {name: 'andrey',age: 29,status: true,address: {city: 'Quebeck', country: 'Canada',street:'Binaro',houseNumber: 33}},
-    {name: 'masha',age: 30,status: true,address: {city: 'Moscow', country: 'Russia', street:'Gogolia',houseNumber: 1}},
-    {name: 'olya',age: 31,status: false,address: {city: 'Portland',country:'USA', street:'Forest str',houseNumber: 4}},
-    {name: 'max',age: 31,status: true,address: {city: 'Cairo', country: 'Egypt', street: 'Seashore', houseNumber: 45}}
-    ];
 
 
 //// - З масиву users за допомогою циклу витягнути адреси користувачів і записати (скопіювати) їх в інший порожній масив.
@@ -511,25 +499,48 @@ let users = [{name:'vasya',age: 31,status:false,address:{city: 'Lviv', country: 
 
 
 // створити розмітці блок з id, class та текстом в середені. Зчитати окремо цей текст з селекторів по id , class та тегу
-// змінити цей текст використовуючи селектори id, class,  tag
-// let elementByid = document.getElementById('content')
-// let innerText = elementByid.innerText
-// console.log(innerText)
 //
-// let elementsByClassName = document.getElementsByClassName('class')
-// for (const elementsByClassNameElement of elementsByClassName) {
-//     elementsByClassNameElement.innerText = "popopop"
-//     console.log(elementsByClassNameElement)
+// let elementByid = document.getElementById('container')
+// elementByid.classList.add('target')
+// let text=document.createElement('p')
+// text.innerText= 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+// elementByid.appendChild(text)
+
+
+// змінити цей текст використовуючи селектори id, class,  tag
+
+// let elmentByid=document.getElementById('container') //    це не ітерується!!!!! Чому, як зробити
+// for (const elementByidElement of elementByid) {
+//     elementByidElement.innerText = "hello owu"
+//     console.log(elementByidElement)
 // }
-// let elmentByTag = document.getElementsByTagName('h2')
+// let elmentByClass = document.getElementsByClassName('target')
+// for (const elmentByClassName of elmentByClass) {
+//     elmentByClassName.innerText = "hello ho-ho-ho-ho"
+//     console.log(elmentByClassName)
+// }
+// let elmentByTag = document.getElementsByTagName('p')
 // for (const elmentByTagElement of elmentByTag) {
-//     elmentByTagElement.innerText = "hohohoho"
+//     elmentByTagElement.innerText = "ho-ho-ho-ho"
 //     console.log(elmentByTagElement)
 // }
 
 //змінити висоту та ширину блоку використовуючи селектори id, class,  tag
 
-// let elmentByTag=document.getElementsByTagName('h2')
+// let elmentByid=document.getElementById('container') //    це не ітерується!!!!! Чому, як зробити
+// for (const elementByidElement of elementByid) {
+//     elementByidElement.style.width='400px'
+//     elementByidElement.style.height='400px'
+//     console.log(elementByidElement)
+// }
+
+// let elmentByClass = document.getElementsByClassName('target')
+// for (const elmentByClassName of elmentByClass) {
+//     elmentByClassName.style.width='350px'
+//     elmentByClassName.style.height='350px'
+//     console.log(elmentByClassName)
+// }
+// let elmentByTag=document.getElementsByTagName('p')
 // for (const elmentByTagElement of elmentByTag) {
 //     elmentByTagElement.style.width='300px'
 //     elmentByTagElement.style.height='300px'
@@ -561,6 +572,23 @@ let users = [{name:'vasya',age: 31,status:false,address:{city: 'Lviv', country: 
 // }
 // document.body.appendChild(table)
 
+
+//за допомоги document.createElement, appendChild та 2х циклів створити таблицю на 10 рядків з 5 ячейками всередені
+
+
+// let  table=document.createElement('table')
+// for (let i = 0; i < 10; i++) {
+//     let tr= document.createElement('tr')
+//     for (let j = 0; j < 5; j++) {
+//        let td = document.createElement('td')
+//         tr.appendChild(td)
+//
+//     }
+//     table.appendChild(tr)
+// }
+// document.body.appendChild(table)
+
+
 // за допомоги document.createElement, appendChild та 2х циклів створити таблицю на n рядків з m ячейками всередені. n та m отримати з prompt
 
 // const table = document.createElement('table')
@@ -588,15 +616,15 @@ let users = [{name:'vasya',age: 31,status:false,address:{city: 'Lviv', country: 
 //
 //  - знайти всі div та змінити ім колір на червоний
 
-// const elementsByTagName = document.getElementsByTagName('*')
-// for (const tagNameMap of elementsByTagName) {
-//     if (tagNameMap.getAttribute('class')) {
-//         console.log(tagNameMap);
-//     }
-//
-// }
-// let elementNodeListOf = document.querySelectorAll('[id]')
-// console.log(elementNodeListOf);
+const elementsByTagName = document.getElementsByTagName('*')
+for (const tagNameMap of elementsByTagName) {
+    if (tagNameMap.getAttribute('class')) {
+        console.log(tagNameMap);
+    }
+
+}
+let elementNodeListOf = document.querySelectorAll('[id]')
+console.log(elementNodeListOf);
 
 // знайти всі параграфи ,та змінити текст на hello oktenweb!
 // const elementsByTagName = document.getElementsByTagName('p')
@@ -622,77 +650,77 @@ let users = [{name:'vasya',age: 31,status:false,address:{city: 'Lviv', country: 
 //
 // -
 //
-//
-//
-// 			let rules = [
-//
-// 				{
-//
-// 					title: 'Первое правило Бойцовского клуба.',
-//
-// 					body: 'Никому не рассказывать о Бойцовском клубе.'
-//
-// 				},
-//
-// 				{
-//
-// 					title: 'Второе правило Бойцовского клуба.',
-//
-// 					body: 'Никогда никому не рассказывать о Бойцовском клубе.'
-//
-// 				},
-//
-// 				{
-//
-// 					title: 'Третье правило Бойцовского клуба.',
-//
-// 					body: 'В схватке участвуют только двое.'
-//
-// 				},
-//
-// 				{
-//
-// 					title: 'Четвертое правило Бойцовского клуба.',
-//
-// 					body: 'Не более одного поединка за один раз.'
-//
-// 				},
-//
-// 				{
-//
-// 					title: 'Пятое правило Бойцовского клуба.',
-//
-// 					body: 'Бойцы сражаются без обуви и голые по пояс.'
-//
-// 				},
-//
-// 				{
-//
-// 					title: 'Шестое правило Бойцовского клуба.',
-//
-// 					body: 'Поединок продолжается столько, сколько потребуется.'
-//
-// 				},
-//
-// 				{
-//
-// 					title: 'Седьмое правило Бойцовского клуба.',
-//
-// 					body: 'Если противник потерял сознание или делает вид, что потерял, или говорит «Хватит» — поединок окончен.'
-//
-// 				},
-//
-// 				{
-//
-// 					title: 'Восьмое и последнее правило Бойцовского клуба.',
-//
-// 					body: 'Новичок обязан принять бой.'
-//
-// 				},
-//
-//
-//
-// 			];
+
+            //
+			// let rules = [
+            //
+			// 	{
+            //
+			// 		title: 'Первое правило Бойцовского клуба.',
+            //
+			// 		body: 'Никому не рассказывать о Бойцовском клубе.'
+            //
+			// 	},
+            //
+			// 	{
+            //
+			// 		title: 'Второе правило Бойцовского клуба.',
+            //
+			// 		body: 'Никогда никому не рассказывать о Бойцовском клубе.'
+            //
+			// 	},
+            //
+			// 	{
+            //
+			// 		title: 'Третье правило Бойцовского клуба.',
+            //
+			// 		body: 'В схватке участвуют только двое.'
+            //
+			// 	},
+            //
+			// 	{
+            //
+			// 		title: 'Четвертое правило Бойцовского клуба.',
+            //
+			// 		body: 'Не более одного поединка за один раз.'
+            //
+			// 	},
+            //
+			// 	{
+            //
+			// 		title: 'Пятое правило Бойцовского клуба.',
+            //
+			// 		body: 'Бойцы сражаются без обуви и голые по пояс.'
+            //
+			// 	},
+            //
+			// 	{
+            //
+			// 		title: 'Шестое правило Бойцовского клуба.',
+            //
+			// 		body: 'Поединок продолжается столько, сколько потребуется.'
+            //
+			// 	},
+            //
+			// 	{
+            //
+			// 		title: 'Седьмое правило Бойцовского клуба.',
+            //
+			// 		body: 'Если противник потерял сознание или делает вид, что потерял, или говорит «Хватит» — поединок окончен.'
+            //
+			// 	},
+            //
+			// 	{
+            //
+			// 		title: 'Восьмое и последнее правило Бойцовского клуба.',
+            //
+			// 		body: 'Новичок обязан принять бой.'
+            //
+			// 	},
+            //
+            //
+            //
+			// ];
 // let arrayH2 = document.getElementsByTagName('h2')
 // let content = document.getElementById('content')
 // let ul = document.createElement('ul')
