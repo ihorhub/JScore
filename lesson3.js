@@ -616,15 +616,13 @@
 //
 //  - знайти всі div та змінити ім колір на червоний
 
-const elementsByTagName = document.getElementsByTagName('*')
-for (const tagNameMap of elementsByTagName) {
-    if (tagNameMap.getAttribute('class')) {
-        console.log(tagNameMap);
-    }
+// const elementsByclassName = document.getElementsByClassName('class')
+// for (const tagNameMap of elementsByclassName) {
+//     if (tagNameMap.getAttribute('class')) {
+//         console.log(tagNameMap);
+//     }
+// }
 
-}
-let elementNodeListOf = document.querySelectorAll('[id]')
-console.log(elementNodeListOf);
 
 // знайти всі параграфи ,та змінити текст на hello oktenweb!
 // const elementsByTagName = document.getElementsByTagName('p')
