@@ -767,16 +767,15 @@
 //     .then(users => {
 //             console.log(users)
 //
-//             for (const argument of users) {
-//                 let divElement = document.getElementsByClassName('div')
+//             for (const userKey of users) {
 //                 let div = document.createElement('div')
-//                 div.innerText= `${[argument]}`
+//                 div.innerText= `${[userKey]} ${users[userKey]}`
 //
 //                 for (const divKey in div) {
 //                     let h1 = document.createElement('h1')
-//                     h1.innerText = `${[divKey]}`
+//                     h1.innerText = `${[divKey]} ${div[divKey]}`  // та ж проблема, що і у верхніх завдання, як проітерувати, щоб не прописувати назви ключів, щоб самі прописавались
 //                     div.appendChild(h1)
-//                     document.body.appendChild(div)
+//                      document.body.appendChild(div)
 //                 }
 //
 //             }
@@ -786,8 +785,57 @@
 
 // *** за допомогою fetch (як в прикладі) отримати від jsonplaceholder всі posts. За допомогою document.createElement вивести їх в браузер. Помістити кожен окремий об'єкт в блок, при цьому кожен внутрішній об'єкт(якщо він існує) в свій блок (блок в блоці).
 //
+
+
+// fetch('https://jsonplaceholder.typicode.com/posts')
+//     .then(posts => {
+//         return posts.json()
+//     })
+//     .then(posts => {
+//         console.log(posts)
+//         for (const post of posts) {
+//             let div = document.createElement('div')
+//             div.innerText = `${post.userId}--${post.id}--${post.title}`
+//
+//             if (typeof post === 'object') {
+//                 for (const postsKey in post) {
+//                     let p = document.createElement('p')
+//                     p.innerText = `${post[postsKey]}`
+//                     div.appendChild(p)
+//
+//
+//                     document.body.appendChild(div)
+//                 }
+//             }
+//         }
+//
+//     })
 // *** за допомогою fetch (як в прикладі) отримати від jsonplaceholder всі comments. За допомогою document.createElement вивести їх в браузер. Помістити кожен окремий об'єкт в блок, при цьому кожен внутрішній об'єкт(якщо він існує) в свій блок (блок в блоці).
 //
+
+// fetch('https://jsonplaceholder.typicode.com/comments')
+//     .then(comments => {
+//         return comments.json()
+//     })
+//     .then(comments => {
+//         console.log(comments)
+//         for (const comment of comments) {
+//             let div = document.createElement('div')
+//             div.innerText = `${comment.postId}--${comment.id}--${comment.name}--${comment.email} -- ${comment.body}`
+//
+//             if (typeof comment === 'object') {
+//                 for (const commentKey in comment) {
+//                     let p = document.createElement('p')
+//                     p.innerText = `${comment[commentKey]}`
+//                     div.appendChild(p)
+//
+//
+//                     document.body.appendChild(div)
+//                 }
+//             }
+//         }
+//
+//     })
 // ****** при помощи fetch (как в примере) получить от jsonplaceholder все posts.
 // Внутри последнего then() сделать еще один fetch который сделает запрос и получит все comments.
 // Объеденить соответсвующий post с соответсвующими comment и вывести в браузер.
