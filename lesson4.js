@@ -1,10 +1,15 @@
-//- створити функцію яка виводить масив
-// function arry1(array) {
-//     console.log(array)
-// }
-// arry1([1,2,3,5,8])
+// 1  - створити функцію яка виводить масив
 
-//- створити функцію яка заповнює масив рандомними числами та виводить його. Для виведення використати попвередню функцію
+
+// let arr = [];
+// function fillArray() {
+//     arr = [1, 2, 3];
+// }
+// fillArray();
+// console.log(arr);
+
+
+//  2 - створити функцію яка заповнює масив рандомними числами та виводить його. Для виведення використати попвередню функцію
 // function array(length, min, max) {
 //     let arr = []
 //     for (let i = 0; i < length; i++) {
@@ -17,16 +22,18 @@
 //
 // array(7, 2, 15)
 
-// - створити функцію яка приймає три числа та виводить та повертає найменьше.
-// function numbes(a, b, c) {
-//     console.log(Math.min(a, b, c))
-//     return Math.min(a, b, c)
-//
-// }
-//
-// numbes(5, 15, 58)
 
-//- створити функцію яка приймає три числа та виводить та повертає найбільше.
+//   3 - створити функцію яка приймає три числа та виводить та повертає найменьше.
+
+
+// function number (a,b,c) {
+//     console.log(Math.min(a,b,c))
+//         return Math.min(a, b, c)
+// }
+// number (5,15,88)
+
+
+//  4 - створити функцію яка приймає три числа та виводить та повертає найбільше.
 // function numbes(a, b, c) {
 //     console.log(Math.max(a, b, c))
 //     return Math.max(a, b, c)
@@ -34,69 +41,156 @@
 // }
 //
 // numbes(-5, 15, 58)
-//// /*
-//   1) Ти повинен передати будь яку кількість чисел, а не масив
-//   2) const arrElement не у зоні видимості для console.log та return
-//   3) що таке arr у 52 стрічці (тобто тут numbes(arr))
-//створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше
 
-// function numbes(arr) {                        //це було в ДЗ і паралельно дивився приклади в гуглі.
+
+
+
+//  5 -- створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше
+
+// function number(ar) {
 //
-//      console.log(Math.max(arr))
-//      return Math.min(arr)
+//      console.log(Math.max(ar))
+//      return Math.min(ar)
 //     }
-// numbes(1,2,6,5,8,9,25,749)
+// number (2,6,5,8,9,25,749)
 
-//створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень.   // це було в ДЗ і паралельно дивився приклади в гуглі.
-// function averageСost(arr) {
+
+// 6-- створити функцію яка виводить масив
+// let arr = [];
+// function fillArray() {
+//     arr = [1, 2, 3];
+// }
+// fillArray();
+// console.log(arr);
+
+
+  //  7 -  створити функцію яка повертає найбільше число з масиву
+
+// function fillArray(ar) {
+//     console.log(Math.max.apply(null, ar))
+// }
+//
+// fillArray([1, 5, 8, 86, 7,]);
+
+
+//  8  -створити функцію яка повертає найменьше число з масиву
+
+// function fillArray(ar) {
+//     console.log(Math.min.apply(null, ar))
+// }
+//
+// fillArray([1, 5, 8, 86, 7,]);
+
+//  9--створити функцію яка приймає масив чисел та складає значення елементів масиву та повертає його.
+
+// function numbers() {
 //     let sum = 0;
-//     for (let i = 0; i < arr.length; i++) {
-//        sum = (sum + arr[i]) / arr.length;
+//     for (const argument of arguments) {
+//         sum+=argument
 //     }
-//
+//     console.log(sum)
+// return sum;
+// }
+//  numbers(5,5,5)
+
+
+// 10 -створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень.
+
+// function numbersSum() {
+//     let sum = 0;
+//     for (const argument of arguments) {
+//         sum=sum+argument/arguments.length
+//     }
+//     console.log(sum)
 //     return sum;
 // }
-//  averageСost(2,2,2,2,2)
+// numbersSum(10,10,10)
 
-// function averageСost(arr){
-//     return arr.reduce((previousValue, currentValue)=>previousValue+currentValue)/arr.length
-// }
-//  averageСost(2,5,8,55,9)
 
-//- Створити функцію яка приймає масив будь яких объектів, та повертає значення кількості об'єктів в масиві
-// function user(arr) {
-//     let count = 0
-//     for (const arrElement of arr) {
-//         if (typeof arrElement === 'object')
-//             count++
-//     }
-//     return count
-// }
 
-// Створити функцію яка приймає масив будь яких объектів, та повертає загальн кількість полів в них
-// function user(arr) {
-//     let count = 0
-//     for (const arrElement of arr) {
-//         if (typeof arrElement === 'object') {
-//             for (const arrElementKey in arrElement) {
+
+//  ???? !!!  11 - Створити функцію яка приймає масив будь яких объектів, та повертає значення кількості об'єктів в масиві
+
 //
-//             }
+// function  user(arr) {
+//     let count = 0
+//     for (const argument of arr) {
+//         if (typeof argument==='object'){
 //             count++
 //         }
+//
 //     }
+//     console.log(count);
 //     return count
 // }
+//
+// user([{name: 'vasya', age: 31, status: false, skills: ['java', 'js']},
+//     {name: 'petya', age: 30, status: true, skills: ['java', 'js', 'html']},
+//     {name: 'kolya', age: 29, status: true, skills: ['mysql', ',mongo']},
+//     {name: 'olya', age: 28, status: false, skills: ['java', 'js']},
+//     {name: 'max', age: 30, status: true, skills: ['mysql', ',mongo']}])
 
-// створити функцію  яка скаладає значення елементів з однаковими індексами  та повертає новий результуючий масив
-// ПРАЦЮЄ!!
+
+// function findArrayLength(arr) {
+//     let x = 0;
+//     for(let i = 0; i < arr.length; i++) {
+//         if(typeof arr[i] == 'object') {
+//             x += 1;
+//         }
+//     }
+//     console.log(x);
+//     return x;
+// }
+// findArrayLength([{name: 'vasya', age: 31, status: false, skills: ['java', 'js']},
+//     {name: 'petya', age: 30, status: true, skills: ['java', 'js', 'html']},
+//     {name: 'kolya', age: 29, status: true, skills: ['mysql', ',mongo']},
+//     {name: 'olya', age: 28, status: false, skills: ['java', 'js']},
+//     {name: 'max', age: 30, status: true, skills: ['mysql', ',mongo']}])
+// function findArrayLength(arr) {
+//     let x = 0;
+//     for(let i = 0; i < arr.length; i++) {
+//         x += 1;
+//     }
+//     console.log(x);
+//     return x;
+// }
+// findArrayLength([133,'sddsa','546'])
+
+
+
+// 12 -Створити функцію яка приймає масив будь яких объектів, та повертає загальн кількість полів в них
+// function user(arr) {
+//
+//     let x=0
+//     for (const argument of arr) {
+//         for (const argumentsKey in arguments) {
+//            x++
+//         }
+//
+//     }
+//     console.log(x)
+//
+// }
+//
+// user([{name: 'vasya', age: 31, status: false, skills: ['java', 'js']},
+//     {name: 'petya', age: 30, status: true, skills: ['java', 'js', 'html']},
+//      {name: 'kolya', age: 29, status: true, skills: ['mysql', ',mongo']},
+//      {name: 'olya', age: 28, status: false, skills: ['java', 'js']},
+//      {name: 'max', age: 30, status: true, skills: ['mysql', ',mongo']}])
+//
+//
+//
+
+//   13- створити функцію  яка скаладає значення елементів з однаковими індексами  та повертає новий результуючий масив
+//
 // let arr1 = [1, 2, 3, 4]
 // let arr2 = [2, 3, 4, 5]
 //
 // function sumArr(array1, array2) {
-//     let result = []
+//    let result = []
 //     for (let i = 0; i < array1.length; i++) {
-//         result.push(array1[i] + array2[i]);
-//     }
+//        result.push(array1[i] + array2[i]);
+//    }
 //
 //     return result
 // }
@@ -105,19 +199,27 @@
 
 
 
-//приймає масив та число "i", та міняє місцями об`єкт який знаходиться в індексі "i" на "i+1"
-//                       і відео по дз по цьому тоже не зрозуміле!!!!
 
-// TODO: у тебе є масив [3, 2, 1, 8, 5, 7]
-// //       я пишу число 4
-// //       моє число з масиву під індексом 4 замінється і стає на позицію 5, а те число з 5 стає на 4
-// //       і масив получається [3, 2, 1, 8, 7, 5]
+//   14  приймає масив та число "i", та міняє місцями об`єкт який знаходиться в індексі "i" на "i+1"
+//
 
-//створити функцію яка буде переносити елементи з значенням 0 у кінець маисву. Зберігаючи при цьому порядок не нульових значень.
+
+// function array(arr, i) {
+//     let newArr = arr[i]
+//
+//
+//     arr[i] = arr[i + 1]
+//     arr[i + 1] = newArr
+//     console.log(arr)
+// }
+//
+//
+// array([1, 55, 66, 9, 4, 0, 44], 3)
+//  15-створити функцію яка буде переносити елементи з значенням 0 у кінець маисву. Зберігаючи при цьому порядок не нульових значень.
 //
 //[1,0,6,0,3] => [1,6,3,0,0]
-
   //  [0,1,2,3,4] => [1,2,3,4,0]
+
 // function filterZero(array) {
 //     let number = []
 //     let zero = []
@@ -133,13 +235,13 @@
 //
 // }
 //
-// console.log(filterZero([1, 0, 6, 0, 3]))
-// console.log(filterZero([0, 1, 2, 3, 4]))
+// console.log(filterZero([1, 0, 6,0,55, 0, 3]))
+// console.log(filterZero([0, 1, 2,64,0,2563,0, 3, 4]))
 
 
-//Створити функцію яка :
+// --Створити функцію яка :
 //
-// - Додає в боді блок з текстом "Hello owu"
+// 16  - Додає в боді блок з текстом "Hello owu"
 
 // function addDiv() {
 //     let div = document.createElement('div')
@@ -150,7 +252,7 @@
 // addDiv()
 
 //
-// - Додає в боді елемент з текстом . Тип елементу та текст отримати через аргументи
+//  17 - Додає в боді елемент з текстом . Тип елементу та текст отримати через аргументи
 //
 // function addDiv(massege, typeTag) {
 //     let tag = document.createElement(typeTag)
@@ -161,8 +263,11 @@
 //
 // addDiv('Hellow owu', 'h1')
 //
-// - приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
+//  18 - приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
 
+
+    //Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали.
+// Всі властивості авто в обному блоці
 // let cars = [
 //     {id:1,name: 'Tesla', model: 'ModelX', age: '2018', powerKw: 100, color: 'black',driver:{name:'Vasya',age:35,sex:'male',experience:15}},
 //     {id:2,name: 'Toyota', model: 'Camry', age: '2010', powerKw: 98, color: 'bronze',driver:{name:'P1etya',age:30,sex:'male',experience:10}},
@@ -178,7 +283,6 @@
 // ]
 
 // function carsArray(array, id) {
-//     const block = document.getElementById(id)
 //     const ul = document.createElement("ul")
 //     for (let i = 0; i < array.length; i++) {
 //         const carEl = array[i];
@@ -186,30 +290,25 @@
 //         li.innerText = `${carEl.id}, ${carEl.name}, ${carEl.model}, ${carEl.age}, ${carEl.powerKw}, ${carEl.color}`
 //         ul.appendChild(li)
 //     }
-//     block.appendChild(ul)
 //
-//     document.body.appendChild(block)
-//
+//     document.body.appendChild(ul)
 // }
 //
 // carsArray(cars, 'list')
-
-
-//
-// Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали. Всі властивості авто в обному блоці
 //
 
+//  19- Для кожної властивості створити всередені блока автомоблія свій блок
 // function carsArray(array, id) {
-//     const block = document.getElementById(id)
+//     const block = document.getElementById('container')
 //     const name = document.createElement("div")
 //     for (let i = 0; i < array.length; i++) {
 //         const carEl = array[i];
 //         const div = document.createElement("div")
 //
-//         div.innerText = `${carEl.id} ${carEl.name}`
+//         div.innerText = `${carEl.id}-- ${carEl.name}`
 //
 //         const h3 = document.createElement("h3")
-//         h3.innerText = `${carEl.model}, ${carEl.age}, ${carEl.powerKw}, ${carEl.color}`
+//         h3.innerText = `${carEl.model}- ${carEl.age}- ${carEl.powerKw}- ${carEl.color}`
 //         div.appendChild(h3)
 //         name.appendChild(div)
 //     }
@@ -225,7 +324,7 @@
 //
 //
 //
-// Для кожної властивості створити всередені блока автомоблія свій блок
+
 
 //      function carsArray(array, id) {
 //     const block = document.getElementById(id)
@@ -265,13 +364,13 @@
 // та повертає масив цих з'єднаних об'єктів.
 //
 // Приклад масивів:
-//
-//             let usersWithId = [{id: 1, name: 'vasya', age: 31, status: false}, {id: 2, name: 'petya', age: 30, status: true},
-//             {id: 3, name: 'kolya', age: 29, status: true}, {id: 4, name: 'olya', age: 28, status: false},];
-//
-//             let citiesWithId = [{user_id: 3, country: 'USA', city: 'Portland'}, {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
-//             {user_id: 2, country: 'Poland', city: 'Krakow'}, {user_id: 4, country: 'USA', city: 'Miami'},];
-//
+
+            // let usersWithId = [{id: 1, name: 'vasya', age: 31, status: false}, {id: 2, name: 'petya', age: 30, status: true},
+            // {id: 3, name: 'kolya', age: 29, status: true}, {id: 4, name: 'olya', age: 28, status: false},];
+            //
+            // let citiesWithId = [{user_id: 3, country: 'USA', city: 'Portland'}, {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
+            // {user_id: 2, country: 'Poland', city: 'Krakow'}, {user_id: 4, country: 'USA', city: 'Miami'},];
+
 // let usersWithId = [{id: 1, name: 'vasya', age: 31, status: false},
 //     {id: 2, name: 'petya', age: 30, status: true}, {id: 3, name: 'kolya', age: 29, status: true}, {
 //         id: 4,
@@ -294,7 +393,6 @@
 //                 usersCities.push({...user, ...city})
 //             }
 //
-//
 //         }
 //     }
 //     console.log(usersCities)
@@ -315,7 +413,7 @@
 // Результатом відпрацювання скріпта повинна бути структура яка міститься в блоці wrap файла rule.html
 //
 //
-//
+
 // 			let rules = [
 //
 // 				{
@@ -406,3 +504,46 @@
 //     document.body.appendChild(wrap)
 // }
 // wraprules(rules)
+
+
+//===========додаткове від віктора========
+//
+// 1) Точная степень двойки.
+//     Дано натуральное число N.
+//     Выведите слово YES, если число N является точной степенью двойки,
+//     или слово NO в противном случае.
+//     Операцией возведения в степень пользоваться нельзя!
+
+
+
+
+// function rec(n) {
+//     const  res = n/2
+//     if (res>1){
+//         return rec(n/2)
+//     }
+// if ( res<1){
+//     return  'NO'
+// }
+// return  'YES'
+// }
+// console.log(rec(5))
+// //  ХЗ
+
+
+   // 2) Deep Copy реалізувати глибоке копіювання обєкту за допомогою рекурсій
+// function deepCopy(copy) {
+//
+//     deepCopy()    // робим виклик функції в самій функції
+
+// }
+
+//
+// 3) Flat Вирівняти багаторівневий масив в однорівневий
+  //  [1,3, ['Hello, 'Wordd', [9,6,1]], ['oops'], 9] -> [1, 3, 'Hello, 'Wordd', 9, 6, 1, 'oops', 9]
+
+
+//
+// let ar1= [1,3, ['Hello, 'world', [9,6,1]], ['oops'], 9];
+// let ar2= ar1.join('')
+// console.log(ar2)
