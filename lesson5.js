@@ -511,3 +511,20 @@
 // let arrayCinderells = [Cinderella1, Cinderella2, Cinderella3, Cinderella4, Cinderella5, Cinderella6, Cinderella7, Cinderella8, Cinderella9, Cinderella10]
 // let prince = new Prince('Ivan', 21, 36)
 // prince.findCinderell(arrayCinderells)
+
+
+// let user = [{name: 'vasya', age: 31, status: {flo:52,as:5, fdss:{nelal:'55'}}, skills: ['java', 'js']},
+//     {name: 'petya', age: 30, status: true, skills: ['java', 'js', 'html']},
+//     {name: 'kolya', age: 29, status: true, skills: ['mysql', ',mongo']},
+//     {name: 'olya', age: 28, status: false, skills: ['java', 'js']},
+//     {name: 'max', age: 30, status: true, skills: ['mysql', ',mongo']}];
+// function  fff(user) {
+//     for (const userKey in user) {
+//         if (typeof user[userKey]==='object'){
+//             console.log(user[userKey])
+//             fff([userKey])
+//         }
+//     }
+//
+// }
+// fff(user)
