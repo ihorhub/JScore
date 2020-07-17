@@ -305,17 +305,17 @@
 // -- отфильтровать (оставить) тех у кого отрицательный статус и младше 30 лет
 // -- отфильтровать (оставить) тех у кого номер дома четный
 
-let usersWithAddress = [{id: 1, name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Konovalca', number: 16}},
-    {id: 2, name: 'petya', age: 30, status: true, address: {city: 'Lviv', street: 'Lubinska', number: 1}},
-    {id: 3, name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Doroshenka', number: 121}},
-    {id: 4, name: 'olya', age: 28, status: false, address: {city: 'Lviv', street: 'Majdan', number: 90}},
-    {id: 5, name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Chuprynky', number: 115}},
-    {id: 6, name: 'anya', age: 31, status: false, address: {city: 'Lviv', street: 'Geroiv_UPA', number: 2}},
-    {id: 7, name: 'oleg', age: 28, status: false, address: {city: 'Lviv', street: 'Horodocka', number: 22}},
-    {id: 8, name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Kulparkivska', number: 43}},
-    {id: 9, name: 'masha', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 12}},
-    {id: 10, name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Franka', number: 16}},
-    {id: 11, name: 'max', age: 31, status: true, address: {city: 'Lviv', street: 'Antonovicha', number: 121}}];
+// let usersWithAddress = [{id: 1, name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Konovalca', number: 16}},
+//     {id: 2, name: 'petya', age: 30, status: true, address: {city: 'Lviv', street: 'Lubinska', number: 1}},
+//     {id: 3, name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Doroshenka', number: 121}},
+//     {id: 4, name: 'olya', age: 28, status: false, address: {city: 'Lviv', street: 'Majdan', number: 90}},
+//     {id: 5, name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Chuprynky', number: 115}},
+//     {id: 6, name: 'anya', age: 31, status: false, address: {city: 'Lviv', street: 'Geroiv_UPA', number: 2}},
+//     {id: 7, name: 'oleg', age: 28, status: false, address: {city: 'Lviv', street: 'Horodocka', number: 22}},
+//     {id: 8, name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Kulparkivska', number: 43}},
+//     {id: 9, name: 'masha', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 12}},
+//     {id: 10, name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Franka', number: 16}},
+//     {id: 11, name: 'max', age: 31, status: true, address: {city: 'Lviv', street: 'Antonovicha', number: 121}}];
 //отсортировать его по id пользователей
 // let sortId=usersWithAddress.sort((a,b)=>{
 //     return a.id-b.id
@@ -384,26 +384,53 @@ let usersWithAddress = [{id: 1, name: 'vasya', age: 31, status: false, address: 
 // console.log(numberHous);
 
 
+// творити обєкт автомобіля з полями:
+//     Марка автомобля, потужність двигуна, власник, ціна, рік випуску.
+//     Власник автомобіля теж має бути обєкт, у якого є поля
+// Імя, вік, стаж водіння.
+//     Створити не менше 7 та не більше 20 машинок.
+//     Зробили половину автопарку ремонт мотору, що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
+// На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
+// Для початку вкладіть всі наші створені автомобілі в масив cars.
+//     Далі необхідно рати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
+// Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25, то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
+//     Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
+
+
+
+// let cars = [
+//     {name: 'Tesla', model: 'ModelX', age: '2018', powerKw: 100, color: 'black',driver:{name:'Vasya',age:35,sex:'male',experience:15}},
+//     {name: 'Toyota', model: 'Camry', age: '2010', powerKw: 98, color: 'bronze',driver:{name:'P1etya',age:30,sex:'male',experience:10}},
+//     {name: 'Honda', model: 'CRV', age: '2020', powerKw: 183, color: 'white',driver:{name:'Lesya',age:31,sex:'female',experience:12}},
+//     {name: 'Volkswagen', model: 'Passat', age: '2016', powerKw: 191, color: 'green',driver:{name:'Lena',age:29,sex:'female',experience:9}},
+//     {name: 'Audi', model: 'Q5', age: '2017', powerKw: 210, color: 'silver',driver:{name:'Vitya',age:40,sex:'male',experience:25}},
+//     {name: 'Ford', model: 'Escape', age: '2013', powerKw: 151, color: 'black',driver:{name:'Kokos',age:55,sex:'male',experience:35}},
+//     {name: 'Ferrari', model: '488Spider', age: '2019', powerKw: 435, color: 'red',driver:{name:'Gora',age:43,sex:'male',experience:17}},
+//     {name: 'Lada', model: '2110', age: '2015', powerKw: 58, color: 'crimson',driver:{name:'lyolik',age:22,sex:'male',experience:4}},
+//     {name: 'Skoda', model: 'Octavia', age: '2009', powerKw: 81, color: 'blue',driver:{name:'Bolik',age:27,sex:'male',experience:7}},
+//     {name: 'BMW', model: 'X5', age: '2017', powerKw: 195, color: 'yellow',driver:{name:'Nina',age:29,sex:'female',experience:15}}]
+// console.log(cars);
+//
+// let repasMotor= cars.map((value, index) => {
+//     if (value%2===0){
+//         return value.powerKw*1.1
+//     }
+//     return value
+// })
+//     console.log(repasMotor);
+
 
 
 ///Задача: дан отсортированный по возрастанию массив целых чисел. Необходимо вернуть наименьший и наибольший индекс заданного элемента.
-//
 // Входные данные: arr — массив целых чисел значения которых по модулю не больше 10. Размер массива не более 10 элементов.
-//
 // Вывод: наибольший и наименьший индекс в массиве заданного элемента. Если такого элемента нет в массиве, выведите -1.
-//
-//
 //
 // Пример:
 //
 // Arr = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14]
-//
 // 1. Key = 1
-//
 // Answer: MinIndex = 0, MaxIndex = 0.
-//
 // 2. Key = 4
-//
 // Answer: MinIndex = 3, MaxIndex = 6.
 
 // let Arr = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14]
@@ -414,4 +441,6 @@ let usersWithAddress = [{id: 1, name: 'vasya', age: 31, status: false, address: 
 //     console.log(`Answer: MinIndex =${min},MaxIndex =${max}`)
 // }
 //
-// firstAndLast(Arr, 4)
+// firstAndLast(Arr, 9)
+
+
