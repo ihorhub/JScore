@@ -411,11 +411,11 @@
 //     {name: 'BMW', model: 'X5', age: '2017', powerKw: 195, color: 'yellow',driver:{name:'Nina',age:29,sex:'female',experience:15}}]
 // console.log(cars);
 //
-// let repasMotor= cars.map((value, index) => {
-//     if (value%2===0){
-//         return value.powerKw*1.1
+// let repasMotor= cars.forEach((value, index) => {
+//     if (index % 2 === 0) {
+//
+//         return value
 //     }
-//     return value
 // })
 //     console.log(repasMotor);
 

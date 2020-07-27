@@ -1,30 +1,35 @@
 
 //- Создать произвольный елемент с id = text.
 // Используя JavaScript, сделайте так, чтобы при клике на кнопку исчезал элемент с id="text".
-
-
-// document.getElementById('hider').onclick = function () {
-//     if (document.getElementById('text').hidden === true) {
-//         document.getElementById('text').hidden = false
-//     } else {
-//         document.getElementById('text').hidden =
-//             true
-//     }
+//
+// let myBTN = document.getElementById('btn')
+// let text = document.getElementById('text')
+// text.style.display='block'
+// myBTN.onclick = function () {
+// if (text.style.display==='block'){
+//     text.style.display='none'
+// } else {
+//     text.style.display='block'
+// }
 // }
 //- Создайте кнопку, при клике на которую, она будет скрывать сама себя.
 
-// document.getElementById('hider').onclick = function () {
+// document.getElementById('btn').onclick = function () {
 //     this.style.display = 'none'
 // }
 
 // створити інпут який приймає вік людини та кнопку яка підтверджує дію.
 // При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18,
 // та повідомити про це користувача
-//<input id="number" type="number" value=" введіть тут скільки вам років ">
-// let age = document.form1.age
-// let submit = document.form1.button
-// submit.onclick = function () {
-//     if (age.value > 18) {
+
+//<input id="number" type="number" value="">
+// let num= document.getElementById('number')
+// let btn = document.getElementById('btnInp')
+//
+//
+// btn.onclick = function () {
+//     let value=num.value
+//     if (value > 18) {
 //         alert('Вхід дозволено')
 //     } else {
 //         alert('STOP!!!' +
@@ -36,13 +41,38 @@
 
 
 //Создайте меню, которое раскрывается/сворачивается при клике
+
+// <input id="number" type="number" value="" >
+//     <button id="btnInp"> OK </button>
+//     <ul class="menu" id="menu">
+//     <li>
+//     <a href="#" id="a1">пенкт меню</a>
+// <ul id="subMenu">
+//     <li>
+//     <a href="#" id="a1">пенкт 1</a>
+// </li>
+// <li>
+// <a href="#" id="a1">пенкт 2</a>
+// </li>
+// <li>
+// <a href="#" id="a1">пенкт 3</a>
+// </li>
+// </ul>
+// </li>
+// </ul>
+
+
 // let a1 = document.getElementById('a1')
-// let submenu = document.getElementById('submenu')
-// a1.onclick = ev => {
-//     if (submenu.style.display == 'block') {
+// let submenu = document.getElementById('subMenu')
+//
+// submenu.style.display='block'
+// a1.onclick = function () {
+//     if (submenu.style.display==='block') {
 //         submenu.style.display = 'none'
+//
 //     } else {
 //         submenu.style.display = 'block'
+//
 //     }
 // }
 
@@ -53,11 +83,18 @@
 
 
 // let commentArray = [
-//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'} // якщо додаю обєкти то перестає робити, хоч у відео з ДЗ все працює
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'}
 //
 // ]
 //
-// const content = document.getElementById("content1")
+// const content = document.getElementById("content")
 //
 // commentArray.forEach(value => {
 //     const div = document.createElement('div')
@@ -67,7 +104,7 @@
 //     button.innerText = 'Hide'
 //     h2.innerText = value.title
 //     p.innerText = value.body
-//     button.onclick = (ev) => {
+//     button.onclick = () => {
 //         p.hidden
 //             ? p.hidden = false
 //             : p.hidden = true
@@ -87,16 +124,16 @@
 //
 // Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
 
-// let btn = document.getElementById('btn')
+// let btn = document.getElementById('btn1')
 // let input1 = document.getElementById('input1')
 // let input2 = document.getElementById('input2')
 // let input11 = document.getElementById('input11')
 // let input22 = document.getElementById('input22')
 // btn.onclick = ev => {
-//     console.log(input1.value)
-//     console.log(input2.value)
-//     console.log(input11.value)
-//     console.log(input22.value)
+//     console.log(document.forms.form1.input1.value)
+//     console.log(document.forms.form1.input2.value)
+//     console.log(document.forms.form2.input21.value)
+//     console.log(document.forms.form2.input22.value)
 // }
 
 //- Створити функцію, яка генерує таблицю.
@@ -112,7 +149,7 @@
 //         let tr = document.createElement('tr')
 //         for (let j = 0; j < cols; j++) {
 //             let td = document.createElement('td')
-//             td.innerHTML = i + j                  // td.innerHTML=i.toString()+j.toString() //так робили з відео ДЗ
+//             td.innerHTML = i + j
 //
 //             tr.appendChild(td)
 //         }
@@ -122,7 +159,37 @@
 //     tag.appendChild(table)
 // }
 //
-// CreateTable(6, 8, content) // ще не зовсім розумію ,як нумерація відбувається
+// CreateTable(6, 8, content)
+
+// - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+//     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+// (Додатковачастина для завдання)
+// let inputRow=document.getElementById('inputRow')
+// let inputCol=document.getElementById('inputCol')
+// let inputText=document.getElementById('inputText')
+// let contentTable = document.getElementById('table')
+// let btnTable = document.getElementById(' btnTable')
+// btnTable.onclick=
+// function CreateTable() {
+//     let table = document.createElement('table')
+//     for (let i = 0; i < inputRow.value; i++) {
+//         let tr = document.createElement('tr')
+//
+//         for (let j = 0; j < inputCol.value; j++) {
+//             let td = document.createElement('td')
+//             td.innerText =inputText.value
+//
+//             tr.appendChild(td)
+//         }
+//
+//         table.appendChild(tr)
+//     }
+//     contentTable.appendChild(table)
+// }
+
+
+
+
 
 //Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
 // let imgArray = [
@@ -151,9 +218,9 @@
 //     img.src = imgArray[index].img_url
 // }
 // btn2.onclick = () => {
-//     index + 1<= 1
-//         ? index = imgArray.length - 1
-//         : index = index -1
+//     index + 1>imgArray.length - 1
+//         ? index = 0
+//         :index =index+1
 //     img.src = imgArray[index].img_url
 // }
 
@@ -162,51 +229,110 @@
 // Якщо людина вводить слово і воно міститься в масиві не цензурних слів
 // кинути алерт з попередженням.
 // Перевірку робити при натисканні на кнопку
-//сто копанок чортів тобі в печінку', /// не робить, доступався рызними способами (форм4,нейм тд
+//сто копанок чортів тобі в печінку',
+// / не робить, доступався рызними способами (форм4,нейм тд
 
 
 //
-//
+
 // let badWord=['під три чорти',
 //     'бодай тебе чорти вхопили',
-//     'Ти, гімно нероздушене!',
+//     'Ти,гімно нероздушене!',
 //     'ах ти свиняче рило!',
 //     'дідька лисого',
-//     'дідько б його взяв (вхопив)',
-//     'де його чорти понесли?  ']
+//     'дідько б його взяв',
+//    'де його чорти понесли']
+// let badWord=['qwe',123,'124asd','zx'
 //
+//     ]
+// console.log(badWord);
 // let btn = document.getElementById('btn4')
+// let  word=document.getElementById('word')
 //
 // btn.onclick = () => {
-//     let wasBAdWord = false
-//
-//     let content = document.getElementById('input4').value
 //
 //     for (const string of badWord) {
-//         if (content === string) {
-//             wasBAdWord = true
+//         console.log(string);
+//         console.log( word.value)
+//
+//         if (word.value === string){
+//
+//
+//
+//         alert('STOP!!! зупини лайку')
+//     }
+//
+//     else
+//         {
+//             alert('continue writing')
+//
 //         }
 //
 //     }
-//     wasBAdWord
-//         ? alert('STOP!!! зупини лайку')
-//         : alert('continue writing')
+//
 // }
 
+
+// let badWord=['qwe',123,'124asd','zx'
+//
+// ]
+// console.log(badWord);
+// let btn = document.getElementById('btn4')
+// let  word=document.getElementById('word')
+// btn.onclick=function () {
+//     let bad =badWord.forEach(value => {
+//      if (word.value===value){
+//
+//         return  alert('STOP!!! зупини лайку')
+//      }
+//         else {
+//          alert('continue writing')
+//      }
+//
+//     })
+// }
+
+
+//
+// let badWord=['qwe',123,'124asd','zx'
+//
+// ]
+// console.log(badWord);
+// let btn = document.getElementById('btn4')
+// let  word=document.getElementById('word')
+// btn.onclick=function () {
+//    badWord.find(el => {
+//        return el.startsWith(word.value)
+//            if (word.value===el){
+//
+//                return  alert('STOP!!! зупини лайку')
+//            }
+//            else {
+//                alert('continue writing')
+//            }
+//
+//
+//
+//
+//     })
+// }
 
 //создать скрипт, который берет считывает на странице (rules.html)
 // текст и делает сбоку меню-оглавление по всем заголовкам которые есть в тексте.
 //  При клике на пункт оглавления вы должны отправляться к этому пункту в тексте
+
 // let arrayH2 = document.getElementsByTagName('h2')
-// let content = document.getElementById('content5')
+// let content = document.getElementById('content')
 // let wrap = document.getElementById('wrap')
 // let ul = document.createElement('ul')
 // for (let i = 0; i < arrayH2.length; i++) {
 //     let li = document.createElement('li')
 //     let a = document.createElement('a')
-//     a.href = '#' + i
-//     arrayH2[i].setAttribute('id', [i])
-//     a.innerHTML = arrayH2[i].innerText
+//   a.href = '#' + i
+//   arrayH2[i].setAttribute('id', [i])
+//     console.log(arrayH2)
+//     a.innerText = arrayH2[i].innerText
+//     console.log(a)
 //     li.appendChild(a)
 //     ul.appendChild(li)
 // }
@@ -248,7 +374,8 @@
 //                 {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
 //
 //             ];
-// let content=document.getElementById('content6')
+// console.log(usersWithAddress)
+// let content=document.getElementById('content4')
 // let userDiv=document.createElement('div')
 // userDiv.appendChild(renderContent(usersWithAddress))
 // userDiv.className='user'
@@ -277,6 +404,7 @@
 // content.appendChild(button)
 // button.onclick=ev => {
 //     let myArray=JSON.parse(JSON.stringify(usersWithAddress))
+//     console.log(myArray)
 //     if(input1.checked)myArray=myArray.filter(value => !value.status)
 //     if(input2.checked)myArray=myArray.filter(value => value.age>=29)
 //     if(input3.checked)myArray=myArray.filter(value => value.city==="Kyiv")
@@ -293,3 +421,132 @@
 //     })
 //     return main
 // }
+// let usersWithAddress = [
+//                 {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+//
+//                 {id:2,name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
+//
+//                 {id:3,name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
+//
+//                 {id:4,name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
+//
+//                 {id:5,name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
+//
+//                 {id:6,name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
+//
+//                 {id:7,name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
+//
+//                 {id:8,name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
+//
+//                 {id:9,name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
+//
+//                 {id:10,name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+//
+//                 {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
+//
+//             ];
+//
+// let  block = document.getElementsByClassName('list')[0]
+// for (const user of usersWithAddress) {
+// let div = document.createElement('div')
+//     div.innerText=JSON.stringify(user)
+//     block.appendChild(div)
+// }
+// console.log(block);
+//
+// let element = document.querySelector('#findFasle')
+// element.onclick = function () {
+//     block.innerText = ''
+//     if (element.checked) {
+//         for (const user of usersWithAddress) {
+//             if (!user.status) {
+//                 let div = document.createElement('div')
+//                 div.innerText = JSON.stringify(user)
+//                 block.appendChild(div)
+//             }
+//         }
+//     } else {
+//         for (const user of usersWithAddress) {
+//             let div = document.createElement('div')
+//             div.innerText = JSON.stringify(user)
+//             block.appendChild(div)
+//         }
+//     }
+// }
+//
+// let element1 = document.querySelector('#findAge')
+// element1.onclick = function () {
+//     block.innerText = ''
+//     if (element1.checked) {
+//         for (const user of usersWithAddress) {
+//             if (user.age>=29) {
+//                 let div = document.createElement('div')
+//                 div.innerText = JSON.stringify(user)
+//                 block.appendChild(div)
+//             }
+//         }
+//     } else {
+//         for (const user of usersWithAddress) {
+//             let div = document.createElement('div')
+//             div.innerText = JSON.stringify(user)
+//             block.appendChild(div)
+//         }
+//     }
+// }
+//
+//
+// let element2 = document.querySelector('#findCity')
+// element2.onclick = function () {
+//     block.innerText = ''
+//     if (element2.checked) {
+//         for (const user of usersWithAddress) {
+//             if (user.address.city==='Kyiv') {
+//                 let div = document.createElement('div')
+//                 div.innerText = JSON.stringify(user)
+//                 block.appendChild(div)
+//             }
+//         }
+//     } else {
+//         for (const user of usersWithAddress) {
+//             let div = document.createElement('div')
+//             div.innerText = JSON.stringify(user)
+//             block.appendChild(div)
+//         }
+//     }
+// }
+
+//При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
+
+// let text=document.querySelector('#textCopy')
+// text.onmouseup= function () {
+// let newText=document.getSelection().toString()
+// newText.style.width='10px'
+//
+//     console.log(newText);
+// }
+// let text=document.querySelector('#textCopy')
+// text.onmouseup= function () {
+//     let zz=document.getSelection()
+//     zz.style.fontsize(20)
+// }
+
+
+
+//
+// const cars = [
+//     {name:'Ford', color: 'Red'},
+//     {name:'BMW', color: 'Blue'},
+//     {name:'KIA', color: 'White'}]
+//
+// const summary = {
+//     colors: ['Red', 'Blue', 'White'],
+//     names: ['Ford', 'BMW', 'KIA']}
+//
+//
+//
+//
+//
+// let sum=Object.entries(wwwwwwwwwwwwdddddddas
+//
+// )
+// console.log(sum);
