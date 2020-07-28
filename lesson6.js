@@ -397,7 +397,7 @@
 //     Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
 
 
-
+//
 let cars = [
     {name: 'Tesla', model: 'ModelX', age: '2018', powerKw: 100, color: 'black',driver:{name:'Vasya',age:35,sex:'male',experience:15}},
     {name: 'Toyota', model: 'Camry', age: '2010', powerKw: 98, color: 'bronze',driver:{name:'P1etya',age:30,sex:'male',experience:10}},
@@ -418,11 +418,12 @@ console.log(cars);
 //     }
 // })
 //     console.log(repasMotor);
-for (let i = 0; i < cars.length; i=2) {
+for (let i = 0; i < cars.length; i=i+2) {
     const car = cars[i];
-    car.powerKw=1.1
+Math.round(car.powerKw)*2
+    console.log(car);
 }
-console.log(car);
+
 
 ///Задача: дан отсортированный по возрастанию массив целых чисел. Необходимо вернуть наименьший и наибольший индекс заданного элемента.
 // Входные данные: arr — массив целых чисел значения которых по модулю не больше 10. Размер массива не более 10 элементов.
@@ -447,3 +448,36 @@ console.log(car);
 // firstAndLast(Arr, 9)
 
 
+
+function validAnagram(first, second) {
+    if (first.length !== second.length) {
+        return false;
+    }
+
+    const fCounter = {};
+
+    for (let i = 0; i < first.length; i++) {
+        let letter = first[i];
+
+        fCounter[letter] ? fCounter[letter] += 1 : fCounter[letter] = 1
+        console.log(fCounter);
+
+    }
+
+
+    for (let i = 0; i < second.length; i++) {
+        let letter = second[i];
+
+        if (!fCounter[letter]) {
+            return false
+        } else {
+            fCounter[letter] -= 1
+        }
+    }
+
+    return true
+
+}
+
+
+console.log(validAnagram('damaa', 'amida'));

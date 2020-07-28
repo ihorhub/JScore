@@ -2,12 +2,12 @@
 // - Дана textarea.
 //     В неё вводится текст.
 //     Сделайте так, чтобы после захода на эту страницу через некоторое время, введенный текст остался в textarea.
-// let text=document.getElementById('textarea') // не відображає у localStorage
-// text.value=localStorage.getItem('text')
+// let text=document.getElementById('textarea')
+//
 // text.oninput=(ev) =>{
-// localStorage.getItem('text',ev.target.value)
+// localStorage.setItem('text',ev.target.value)
 // }
-
+//
 
 //Дана форма с инпутами, текстареа, чекбоксами, радио кнопочками, селектами и тп.
 //
@@ -18,12 +18,13 @@
 // Сделайте ваш скрипт как можно более универсальным.
 
 // let form1=document.getElementById('form1')
+// getDataForm(form1)
 // function saveForm(t) {
-//     console.log(t)
+//     setDataForm(t)
 //
 // }
 //
-// function setDataFormtag(tag) {
+// function setDataForm(tag) {
 //     for (let i = 0; i < tag.length; i++) {
 //         const tagElement = tag[i];
 //         console.log(tagElement)
@@ -39,7 +40,7 @@
 //     for (let i = 0; i < localStorage.length; i++) {
 //         if (localStorage.hasOwnProperty(tag.children[i].id)) {
 //             tag.children[i].value = localStorage.getItem(tag.children[i].id)
-//             if (tag.children[i].value === true) {
+//             if (tag.children[i].value === 'true') {
 //                 tag.children[i].setAttribute('checked', 'checked')
 //             }
 //         }
@@ -59,11 +60,11 @@
 //     localStorage.setItem(localStorage.length+1,text.value)
 // }
 // left.onclick=()=>{
-//     left.style.visibility='visible'
-//     let index
+//    right.style.visibility='visible'
+//     let index;
 //     for (const key in localStorage) {
 //         if(localStorage.hasOwnProperty(key)){
-//             if (localStorage.getItem(Key)===text.value){
+//             if (localStorage.getItem(key)===text.value){
 //                 index=key
 //         }
 //
@@ -78,10 +79,10 @@
 // }
 // right.onclick=()=>{
 //     left.style.visibility='visible'
-//     let index
+//     let index;
 //     for (const key in localStorage) {
 //         if(localStorage.hasOwnProperty(key)){
-//             if (localStorage.getItem(Key)===text.value){
+//             if (localStorage.getItem(key)===text.value){
 //                 index=key
 //             }
 //
