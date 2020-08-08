@@ -19,7 +19,7 @@
 //     що при виконанні функції доїхати на роботу ви стали в заторі і не попали на роботу.
 //     Або йдучи на обід ви забули гаманець і лишились голодні.
 
-
+//
 // let chance = 0.24
 //
 //
@@ -44,7 +44,7 @@
 //                 resolve('breakF')
 //             }
 //             else {
-//                 reject('holodilnyk poronuy')
+//                 reject('holodilnyk porognuy')
 //             }
 //         }, 2000)
 //     })
@@ -116,7 +116,7 @@
 //         }, 2000)
 //     })
 // }
-
+//
 // myDay(true)
 //     .then(result => {
 //         console.log(result);
@@ -177,121 +177,121 @@
 // CALLBACK
 
 
-let chance = 0.3
-function myDay (value,cb) {
-    console.log('stand Up')
-        setTimeout(() => {
-            if (Math.random()>chance) {
-                cb('massage budilnik')
-            }
-            else {
-               cb('Prospav')
-            }
-        }, 1000)
-    }
-
-function breakfast(value,cb) {
-    console.log('time to eat my breakfast')
-        setTimeout(() => {
-            if ( Math.random()>chance) {
-                cb('coffe and om-nom-nom')
-            }
-            else {
-                cb('holodilnyk poroznuy ')
-            }
-        }, 2000)
-    }
-
-
-function goToWork(value,cb) {
-    console.log('go to work')
-        setTimeout(() => {
-            if (Math.random()>chance) {
-                cb('gowork on my car')
-            }
-            else {
-                cb('rain on street')
-            }
-        }, 2500)
-    }
-
-
-function work(value,cb) {
-    console.log('you must work ')
-        setTimeout(() => {
-            if (Math.random()>chance) {
-                cb('hard todowork ')
-            }
-            else {
-                cb('Quarantine!!! stay at home')
-            }
-        }, 2000)
-    }
-
-function coofeBreake(value,cb) {
-    console.log('time to coffe')
-        setTimeout(() => {
-            if (Math.random()>chance) {
-                cb(' drink latte ')
-            }
-            else {
-                cb('coffemachine is broken')
-            }
-        }, 1000)
-    }
-
-function goTOhome(value,cb) {
-    console.log('time go to home')
-           setTimeout(() => {
-            if (Math.random()>chance) {
-                cb('home play with child')
-            }
-            else {
-                cb('must stay at home')
-            }
-        }, 3000)
-    }
-
-function godinner( value,cb) {
-    console.log('time for eat my dinner')
-        setTimeout(() => {
-            if ( Math.random()>chance) {
-                cb('diner om nom -nom')
-            }
-            else {
-                cb('vechri ne bude')
-            }
-        }, 2000)
-    }
-
-
-
-
-myDay('chance',(text)=>{
-
-    console.log(text);
-    breakfast('suda pushu vse sho xochu',(text)=>{
-        console.log(text);
-        goToWork('chance',(text)=>{
-            console.log(text)
-            work('todowork',(text)=>{
-                console.log(text)
-                coofeBreake('typecoffe',(text)=>{
-                    console.log(text);
-                    goTOhome('home',(text)=>{
-                        console.log(text);
-                        godinner('сирьтпро',(text)=>{
-                            console.log(text)
-                        })
-                    })
-                })
-            })
-        })
-    })
-})
-
-
-
+// let chance = 0.3
+// function myDay (value,cb) {
+//     console.log('stand Up')
+//         setTimeout(() => {
+//             if (Math.random()>chance) {
+//                 cb('massage budilnik')
+//             }
+//             else {
+//                cb('Prospav')
+//             }
+//         }, 1000)
+//     }
+//
+// function breakfast(value,cb) {
+//     console.log('time to eat my breakfast')
+//         setTimeout(() => {
+//             if ( Math.random()>chance) {
+//                 cb('coffe and om-nom-nom')
+//             }
+//             else {
+//                 cb('holodilnyk poroznuy ')
+//             }
+//         }, 2000)
+//     }
+//
+//
+// function goToWork(value,cb) {
+//     console.log('go to work')
+//         setTimeout(() => {
+//             if (Math.random()>chance) {
+//                 cb('gowork on my car')
+//             }
+//             else {
+//                 cb('rain on street')
+//             }
+//         }, 2500)
+//     }
+//
+//
+// function work(value,cb) {
+//     console.log('you must work ')
+//         setTimeout(() => {
+//             if (Math.random()>chance) {
+//                 cb('hard todowork ')
+//             }
+//             else {
+//                 cb('Quarantine!!! stay at home')
+//             }
+//         }, 2000)
+//     }
+//
+// function coofeBreake(value,cb) {
+//     console.log('time to coffe')
+//         setTimeout(() => {
+//             if (Math.random()>chance) {
+//                 cb(' drink latte ')
+//             }
+//             else {
+//                 cb('coffemachine is broken')
+//             }
+//         }, 1000)
+//     }
+//
+// function goTOhome(value,cb) {
+//     console.log('time go to home')
+//            setTimeout(() => {
+//             if (Math.random()>chance) {
+//                 cb('home play with child')
+//             }
+//             else {
+//                 cb('must stay at home')
+//             }
+//         }, 3000)
+//     }
+//
+// function godinner( value,cb) {
+//     console.log('time for eat my dinner')
+//         setTimeout(() => {
+//             if ( Math.random()>chance) {
+//                 cb('diner om nom -nom')
+//             }
+//             else {
+//                 cb('vechri ne bude')
+//             }
+//         }, 2000)
+//     }
+//
+//
+//
+//
+// myDay('chance',(text)=>{
+//
+//     console.log(text);
+//     breakfast('suda pushu vse sho xochu',(text)=>{
+//         console.log(text);
+//         goToWork('chance',(text)=>{
+//             console.log(text)
+//             work('todowork',(text)=>{
+//                 console.log(text)
+//                 coofeBreake('typecoffe',(text)=>{
+//                     console.log(text);
+//                     goTOhome('home',(text)=>{
+//                         console.log(text);
+//                         godinner('сирьтпро',(text)=>{
+//                             console.log(text)
+//                         })
+//                     })
+//                 })
+//             })
+//         })
+//     })
+// })
+//
+//
+//
 
 
 
