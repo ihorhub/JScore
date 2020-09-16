@@ -1,0 +1,52 @@
+<p>posts works!</p>
+
+<div>
+  <input class="depth" type="add some text no work" >not work
+  <br>
+  <div><button class="sixw">ADD not work</button>
+  </div>
+
+  <br>
+  <div>
+    <button class="sixw" routerLink="/posts"> GO TO POSTS</button>
+  </div>
+  <br>
+  <div>
+    <button class="sixw" routerLink="/users"> GO TO USERS</button>
+  </div>
+
+  <br>
+  <div>
+    <button class="sixw" routerLink=""> GO BACK HOME</button>
+  </div>
+</div>
+<div>
+  {{comments.id}}
+  {{comments.postId}}
+  {{comments.name}}
+  {{comments.body}}
+  {{comments.email}}
+  <br>
+</div>
+
+
+<style>
+
+  .sixw{  font-weight: 700;
+    color: white;
+    margin-left: 400px;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+    background: rgb(64,199,129);
+    box-shadow: 0 -3px rgb(53,167,110) inset;
+    transition: 0.2s;
+
+  }
+  .sixw:hover { background: rgb(53, 167, 110); }
+  .sixw:active {
+    background: rgb(33,147,90);
+    box-shadow: 0 3px rgb(33,147,90) inset;
+
+  }
+</style>

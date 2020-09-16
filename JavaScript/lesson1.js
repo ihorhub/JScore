@@ -28,7 +28,11 @@
 // console.log(string)
 // let tens = ['hello', 'owu', 'com', 'ua', 1, 10, -999, 123, 3.14, 2.7, 16, true, false]
 // document.write(tens);
-
+let asd={
+    1:1,
+    2:2
+}
+console.lod(Object.keys(asd)==Object.values(asd))
 
 // 3.Создать 3 числовых и 3 стринговых константы. Вывести каждую при помощи console.log , alert, document.write
 // const x = 3

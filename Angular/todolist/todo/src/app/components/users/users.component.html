@@ -1,0 +1,54 @@
+<p>users works!</p>
+
+
+<div>
+  <button class="button2" routerLink="/comments">GO TO COMMENTS</button>
+</div>
+<br>
+<div>
+  <button class="button2" routerLink="/posts">GO TO POSTS</button>
+</div>
+<br>
+<div>
+  <button class="button2" routerLink=""> GO BACK HOME</button>
+</div>
+
+<div>
+  {{user.id}}
+  {{user.name}}
+  {{user.username}}
+  {{user.email}}
+  {{user.address}}
+  {{user.city}}
+  {{user.street}}
+  {{user.suite}}
+</div>
+
+
+
+
+
+
+
+<style>
+
+
+  .button2{  font-weight: 700;
+    color: white;
+    margin-left: 400px;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+    background: rgb(64,199,129);
+    box-shadow: 0 -3px rgb(62,110,180) inset;
+    transition: 0.2s;
+
+  }
+  .button2:hover { background: rgb(53, 167, 110); }
+  .button2:active {
+    background: rgb(33,147,90);
+    box-shadow: 0 3px rgb(33,147,90) inset;
+
+  }
+
+</style>

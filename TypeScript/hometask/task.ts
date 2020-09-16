@@ -86,14 +86,15 @@ Fraction3.addDeputy(newDeputy8)
 Fraction4.addDeputy(newDeputy9)
 Fraction4.addDeputy(newDeputy10)
 Fraction4.addDeputy(newDeputy11)
-Fraction1.removeAllDeputy()
-Fraction2.removeAllGrafter()
-Fraction3.removeAllDeputy()
-Fraction4.sumBSizeBriber()
-Fraction4.goAutMaxBriber()
-Fraction4.removeAllDeputy()
-Fraction1.goAutAllDeputy()
-Fraction2.removeDeputy()
+// Fraction1.removeAllDeputy()
+// Fraction2.removeDeputy(newDeputy6 )
+// Fraction2.removeAllGrafter()
+// Fraction3.removeAllDeputy()
+// Fraction4.sumBSizeBriber()
+// Fraction4.goAutMaxBriber()
+// Fraction4.removeAllDeputy()
+// Fraction1.goAutAllDeputy()
+
 
 
     class VerkhovnaRada {
@@ -116,6 +117,12 @@ removeDeputyFraction(Deputy){for (const dep of this.mapFraction) if (Deputy===de
 
 
     }
-    const VerkhovnaRada= new VerkhovnaRada()
-VerkhovnaRada.addFraction(Fraction1)
-    
+    const VRada= new VerkhovnaRada()
+VRada. addFraction(Fraction1)
+VRada. addFraction(Fraction2)
+VRada. addFraction(Fraction3)
+VRada. addFraction(Fraction4)
+console.log(VRada.getAutAllFraction(), 'показуєм виганяємо фракції')
+ console.log(VRada.addDeputeFraction(newDeputy2,Fraction1))
+
+

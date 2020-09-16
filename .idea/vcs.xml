@@ -3,6 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/project vue/lesson1" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/task2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/task2" vcs="" />
   </component>
 </project>

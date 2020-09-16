@@ -22,7 +22,7 @@
 //
 // let chance = 0.24
 //
-//
+
 // function myDay (massage) {
 //     console.log('stand Up')
 //     return new Promise((resolve, reject) => {
