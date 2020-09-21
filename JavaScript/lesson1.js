@@ -28,11 +28,7 @@
 // console.log(string)
 // let tens = ['hello', 'owu', 'com', 'ua', 1, 10, -999, 123, 3.14, 2.7, 16, true, false]
 // document.write(tens);
-let asd={
-    1:1,
-    2:2
-}
-console.lod(Object.keys(asd)==Object.values(asd))
+
 
 // 3.Создать 3 числовых и 3 стринговых константы. Вывести каждую при помощи console.log , alert, document.write
 // const x = 3
@@ -44,7 +40,7 @@ console.lod(Object.keys(asd)==Object.values(asd))
 //
 //4 при помощи 3х разных prompt() получить 3 слова которые являются вашими ФИО.
 // Для фамилии имени и отчества создать разные переменные. Вывести каждую при помощи console.log , alert, document.write
-// let name = prompt('your name  Ihor );
+// let name = prompt('your name  Ihor ')
 // console.log(name)
 // let surname = prompt('enter surname Babiy')
 // console.log(surname)
@@ -70,7 +66,7 @@ console.lod(Object.keys(asd)==Object.values(asd))
 // let result = parseFloat(d);
 // console.log(result)
 // let x = 456.987
-// let result = Math.round(x)
+// let result1 = Math.round(x)
 // console.log(result)
 
 
@@ -221,3 +217,24 @@ console.lod(Object.keys(asd)==Object.values(asd))
 // } else if (color === 'red') {
 //     console.log('жди')
 // }
+
+
+
+
+
+
+
+
+// let user={name:'zzz', age:22,car:{model:'xxx',year:2020}}
+//
+// const{ ...ccc}=user
+// console.log(ccc)
+// let ggg={...user,pay:255}
+// console.log(ggg);
+// let arr=['qqq','www','eee']
+//
+// console.log(arr);
+// //let [,,iii]=arr
+// let att=[...arr,'zzz']
+// console.log(att);
+// console.log(arr);
