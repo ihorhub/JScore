@@ -1,0 +1,36 @@
+<div>
+  userd work !!
+  <div>
+    <input class="depth" type="add some text NO WORK" >not work
+  </div>
+  <br>
+  <div>
+    <button class="com">ADD not work</button>
+  </div>
+</div>
+
+
+<div>
+  <button class="com" routerLink="/comments">GO TO COMMENTS</button>
+</div>
+<br>
+<div>
+  <button class="com" routerLink="/posts">GO TO POSTS</button>
+</div>
+<br>
+<div>
+  <button class="com" routerLink=""> GO BACK HOME</button>
+</div>
+
+<div>
+
+  {{user.id}}
+  {{user.name}}
+  {{user.username}}
+  {{user.email}}
+  {{user.address}}
+  {{user.city}}
+  {{user.street}}
+  {{user.suite}}
+  <button class="com" [routerLink]="['details', user.id]">details</button>
+</div>
