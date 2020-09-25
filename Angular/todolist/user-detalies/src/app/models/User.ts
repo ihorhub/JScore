@@ -7,5 +7,4 @@ export interface User {
   street:string |number;
   suite:string|number;
   city:string
-
 }
