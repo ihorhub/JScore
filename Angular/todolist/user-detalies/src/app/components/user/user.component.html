@@ -1,0 +1,16 @@
+
+<div>
+  {{user.id}}
+  {{user.name}}
+  {{user.username}}
+  {{user.email}}
+
+<!--  {{user.address}}-->
+<!--  {{user.city}}-->
+<!--  {{user.street}}-->
+<!--  {{user.suite}}-->
+<!--  <button class="button2" [routerLink]="['details',user.id]">DETALIES</button>-->
+<!--  <button class="button2" [routerLink]="['details',user.id]" [state]="{user:user}">DETALIES</button>-->
+<!--  <button class="button2" (click)="gotodo(user.id)" )>Detalies</button>-->
+  <button class="button2"[routerLink]="['posts']"[queryParams]="{id:user.id,name:user.name}" >DETAILS </button>
+</div>
