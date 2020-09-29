@@ -163,13 +163,13 @@
 // console.log(lengthName)
 
 // let  newUsers = []
-// let User = users.map(function (value, index) {
+// let user = users.map(function (value, index) {
 //     value.id = index + 1
 //   return  value
 //
 //
 //  })
-//     newUsers.push(User)
+//     newUsers.push(user)
 // newUsers.sort(function (a, b) {
 //     return a.id - b.id
 // })
