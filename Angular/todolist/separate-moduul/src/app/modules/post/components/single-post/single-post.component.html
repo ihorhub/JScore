@@ -1,0 +1,8 @@
+<br>
+<hr>
+{{post?.userId}}
+{{post?.id}}
+{{post?.title}}
+{{post?.body}}
+<button class="button2"[routerLink]="['comments']" [queryParams]="{id:post.id}" >POST-COMMENT </button>
+
