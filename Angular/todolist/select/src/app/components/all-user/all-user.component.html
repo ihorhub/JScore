@@ -1,0 +1,15 @@
+
+<div>
+  <form >
+
+
+<select name="id" [(ngModel)]="user.id"  >
+  <option [value]="user.id" >{{user.id}}</option>
+  <option [value]="user.id" > {{user?.name}} {{user?.username}} {{user?.email}}</option>
+
+</select>
+    <input type="submit" value="go" placeholder="">
+
+  </form>
+
+</div>
