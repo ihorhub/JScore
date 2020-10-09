@@ -3,12 +3,12 @@
   <form >
 
 
-<select name="id" [(ngModel)]="user.id"  >
-  <option [value]="user.id" >{{user.id}}</option>
+<select name="id" [(ngModel)]="userList"  >
+  <option  *ngFor="let user of userList" [value]="user.id" >{{user?.name}}</option>
   <option [value]="user.id" > {{user?.name}} {{user?.username}} {{user?.email}}</option>
 
 </select>
-    <input type="submit" value="go" placeholder="">
+<!--    <input type="submit" value="go" placeholder="">-->
 
   </form>
 

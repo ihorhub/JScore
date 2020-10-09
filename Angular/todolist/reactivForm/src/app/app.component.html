@@ -1,0 +1,7 @@
+<form [formGroup]="form" (ngSubmit)="action()" >
+  <select [formControl]="userid">
+    <option *ngFor="let user of userList">
+
+    </option>
+  </select>
+</form>

@@ -1,14 +1,19 @@
 <p>users works!</p>
 
-<app-all-user *ngFor="let us of userList" [user]="us" >
+<!--<app-all-user *ngFor="let us of userList" [user]="us" >-->
+
+<app-all-user>
+
 <!--  <form >-->
 
 
 <!--    <select name="id" [(ngModel)]="us.id">-->
-<!--      <option *ngFor="let us of userList" >{{us?.name}}</option>-->
+<!--      <option *ngFor="let us of userList" >{{us?.id}} {{user?.name}} {{user?.username}} {{user?.email}</option>-->
 <!--      <option [value]=""></option>-->
 <!--    </select>-->
 <!--  </form>-->
+
+
 </app-all-user>
 
 <router-outlet></router-outlet>
