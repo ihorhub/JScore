@@ -16,4 +16,7 @@ URL='https://jsonplaceholder.typicode.com/users'
 
 
   }
+  getUserByID(id:string):Observable<User>{
+  return  this.httpClient.get<User>( `${this.URL}${id}`)
+  }
 }

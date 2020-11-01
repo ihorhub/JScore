@@ -1,7 +1,15 @@
-<form [formGroup]="form" (ngSubmit)="action()" >
+<form [formGroup]="form" (ngSubmit)="action(form)" >
   <select [formControl]="userid">
     <option *ngFor="let user of userList">
-
+{{user?.id}}--{{user?.name}}
     </option>
+
   </select>
+  <button (click)="getuser(form)"> USER detail</button>
+
+  <button>GET POST</button>
 </form>
+<router-outlet></router-outlet>
+<!--<div>-->
+<!--  {{user.name}}&#45;&#45;{{user.username}}-&#45;&#45;{{user.email}}-->
+<!--</div>-->
