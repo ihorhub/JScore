@@ -18,7 +18,7 @@ function App() {
         <div>
 
 <Switch>
-    <Route path={'/users/:id'} component={UserIdPost}/>
+    <Route path={'/posts?userId=/:id'} component={UserIdPost}/>
     <Route path={'/comments'} component={Comments}/>
     <Route path={'/posts'} component={Posts}/>
     <Route path={'/users'} component={Users}/>

@@ -20,8 +20,8 @@ class UserList extends Component {
     }
 
     goToPost=(id)=> {
-        this.props.history.push({pathname:`/users/${id}`})
-
+        this.props.history.push({pathname:`/posts?userId=/${id}`})
+        {console.log(this.props.history)}
     }
 
 }

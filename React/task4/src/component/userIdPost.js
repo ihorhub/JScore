@@ -15,14 +15,13 @@ componentDidMount() {
 
         return (
             <div>
-                {
-                    user.map(item=>( <div key={item.id}>
-                            <p>{item.id}</p>
-                            <p>{item.userId}</p>
-                            <p>{item.title}</p>
+                {   user.map(item=>(
+                            <p>{item.id}</p>,
+                            <p>{item.userId}</p>,
+                            <p>{item.title}</p>,
                         <p>{item.body}</p>
-                            </div>)
-                )}
+
+                    ))}
             </div>
         );
     }

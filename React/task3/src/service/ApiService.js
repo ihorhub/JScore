@@ -1,11 +1,11 @@
 export class ApiService {
     _userUrl='https://jsonplaceholder.typicode.com/users'
-    _useridUrl='https://jsonplaceholder.typicode.com/posts/?userId='
+    _userIdUrl='https://jsonplaceholder.typicode.com/users'
 
 getUsers(){
         return ( fetch(this._userUrl)).then(res => res.json() )
 }
-async getUserById(id){
-        return (await fetch(`${this._userUrl}/${id}`)).json()
+ getUserById(id){
+        return ( fetch(`${this._userIdUrl}/${id}`)).then(value => value.json())
 }
 }

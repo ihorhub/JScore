@@ -1,21 +1,17 @@
 import React, {Component} from 'react';
 
-class UserList extends Component {
+class UserIdList extends Component {
     render() {
-        let {id, name,username,email}=this.props.user
+        let {id, name,username,email}=this.props.userId
         return (
-
             <div>
-
                 {id}--
                 {name}--
                 {username}--
-
+                {email}-
             </div>
         );
     }
-
-
 }
 
-export default UserList;
+export default UserIdList;
