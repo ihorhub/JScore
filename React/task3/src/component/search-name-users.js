@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {ApiService} from "../service/ApiService";
-import UserList from "./userList";
-import UserId from "./userId";
+import NameUserList from "./name-userList";
+import SearchIdUser from "./search-id user";
 
-class Users extends Component {
+class SearchNameUsers extends Component {
 
-    state={users:[],username:[], name:'' }
+    state={users:[],username:[]}
     _apiUser=new ApiService()
     componentDidMount() {
      this._apiUser.getUsers().then(value => this.setState({users:value}))
@@ -19,11 +19,11 @@ class Users extends Component {
             <div>
                 <form onSubmit={this.onFormSubmit}>
 
-                    <input type="text" placeholder={'search name'} value={this.state.name} onChange={this.nameSearch}/>
-                    <button>search</button>
+                    <input type="text" placeholder={'search name'}  onChange={this.nameSearch}/>
+
                 </form>
 
-                { username.map(value =>(<UserList user={value} key={value.id}/>))}
+                { username&&(username.map(value =>(<NameUserList user={value} key={value.id}/>)))}
 
             </div>
         );
@@ -44,4 +44,4 @@ class Users extends Component {
     }
 }
 
-export default Users;
+export default SearchNameUsers;

@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 
 class UserIdList extends Component {
     render() {
-        let {id, name,username,email}=this.props.userId
+        let {userId}=this.props
         return (
             <div>
-                {id}--
-                {name}--
-                {username}--
-                {email}-
+                {userId.id}--
+                {userId.name}--
+                {userId.username}--
+                {userId.email}-
             </div>
         );
     }

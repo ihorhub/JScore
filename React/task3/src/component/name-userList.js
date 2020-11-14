@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-class UserList extends Component {
+class NameUserList extends Component {
     render() {
-        let {id, name,username,email}=this.props.user
+        let {id, name,username}=this.props.user
         return (
 
             <div>
@@ -18,4 +18,4 @@ class UserList extends Component {
 
 }
 
-export default UserList;
+export default NameUserList;

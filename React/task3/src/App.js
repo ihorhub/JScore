@@ -1,13 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import Users from "./component/users";
-import UserId from "./component/userId";
+import SearchNameUsers from "./component/search-name-users";
+import SearchIdUser from "./component/search-id user";
 
 function App() {
   return (
     <div >
-        <UserId/>
-      <Users/>
+        <SearchIdUser/>
+        <hr/>
+      <SearchNameUsers/>
     </div>
   );
 }
