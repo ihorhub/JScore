@@ -5,7 +5,7 @@ import UserId from "./userId";
 
 class Users extends Component {
 
-    state={users:[],username:[],id:'', name:'' }
+    state={users:[],username:[], name:'' }
     _apiUser=new ApiService()
     componentDidMount() {
      this._apiUser.getUsers().then(value => this.setState({users:value}))

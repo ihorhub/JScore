@@ -5,6 +5,7 @@ import Users from "./component/users";
 import Posts from "./component/posts";
 import Comments from "./component/comments";
 import UserIdPost from "./component/userIdPost";
+import PostIdcomment from "./component/postIdcomment";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <div>
 
 <Switch>
-    <Route path={'/posts?userId=/:id'} component={UserIdPost}/>
+    <Route path={'/posts/:id'} component={PostIdcomment}/>
+     <Route path={'/users/:id'} component={UserIdPost}/>
     <Route path={'/comments'} component={Comments}/>
     <Route path={'/posts'} component={Posts}/>
     <Route path={'/users'} component={Users}/>

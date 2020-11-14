@@ -3,7 +3,7 @@ import {ApiService} from "../service/ApiService";
 import UserIdList from "./userIdList";
 
 class UserId extends Component {
-    state={user:[],id:''}
+    state={user:[],id:1}
     _apiUserId=new ApiService()
 
 

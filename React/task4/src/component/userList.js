@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {withRouter} from "react-router";
+import {Switch, withRouter} from "react-router";
 
 class UserList extends Component {
+
     render() {
-        let{id, name,username,email}=this.props.user
+        let {id, name, username, email} = this.props.user
         console.log(this.props.user)
 
         return (
@@ -12,18 +13,17 @@ class UserList extends Component {
                 <p> name: {name}--</p>
                 <p> user name: {username}--</p>
                 <p> Email: {email}-</p>
-                  <button onClick={() =>this.goToPost(id) } >user posts</button>
-
+                <button onClick={() => { this.userPosts(id) }}> user post  </button>
                 <hr/>
+
             </div>
         );
+
     }
 
-    goToPost=(id)=> {
-        this.props.history.push({pathname:`/posts?userId=/${id}`})
-        {console.log(this.props.history)}
+    userPosts = (id) => {
+        this.props.history.push({pathname: `/users/${id}`})
     }
-
 }
 
-export default withRouter(UserList) ;
+export default withRouter(UserList);

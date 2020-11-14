@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {ApiService} from "../service/apiService";
 import UserList from "./userList";
 
+
 class Users extends Component {
     _apiUser=new ApiService()
     state={users:[]}
@@ -11,11 +12,13 @@ class Users extends Component {
 
     render() {
         let {users}=this.state;
+        // let {match:{path}}=this.props
         return (
             <div>
-                {users.map(value =>(<UserList user={value} key={value.id}/>
+                {users.map(user=>(<UserList user={user} key={user.id}/>))}
 
-                ) )}
+
+
             </div>
 
         );
