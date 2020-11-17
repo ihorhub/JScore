@@ -6,8 +6,10 @@ import CommentList from "./commentsList";
 const Comments=()=>{
     const _apiComment=new SpiService()
     const[comments,setComment]=useState([])
+ let isSubscriber=true
     useEffect(()=>{
-        _apiComment.getComments().then(value => setComment(value))
+        _apiComment.getComments().then(value => {if (isSubscriber) {setComment(value)}})
+        return ()=>{isSubscriber=false}
     })
     return(
         <div>

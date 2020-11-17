@@ -9,7 +9,14 @@ import UserList from "./userList";
 
 const _apiUser= new SpiService()
      const [users,setUsers]=useState([])
-     useEffect(()=>{ _apiUser.getUsers().then(users => setUsers(users))})
+
+
+
+     useEffect(()=>{
+         let isSubscribeb= true;
+         _apiUser.getUsers().then(users =>{if (isSubscribeb){ setUsers(users)}})
+
+         return ()=>{isSubscribeb=false}})
     return(
         <div>
             {users.map(user=>(<UserList  user={user} key={user}/>))}

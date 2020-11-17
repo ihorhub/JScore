@@ -8,7 +8,9 @@ const UserIdPost=(props)=>{
     let[userId,setUserId]=useState([])
     useEffect(()=>{
         const id=props.match.params.id
-        _apiId.getUserId(id).then(value => {setUserId(value)})
+        let isSubscribed=true
+        _apiId.getUserId(id).then(value => { if (isSubscribed) {setUserId(value)} })
+        return ()=>{isSubscribed=false}
     })
     return(
 <div >
