@@ -84,6 +84,9 @@ app.get('/login', (req, res) => {
 });
 app.post('/registration', (req, res) => {
     const {name,password,email}=req.body;
+// як доступитися до userArr? неможу туди записати, і консоль лозі  бачу стрінга вертається, пробував парсити ,
+// без результатно..( незнаю всх можливостей і синтакзиз, а методом втику  не варіан..., хотілось би не списувати а самому,
+// це все що з лекції розібрав і сам написав,...далі  розумію що маю записати в масив, зробити перевірку...
 
 // fs.readFile(pathname,err => {
 //     const find=usersArr.find(value => value.email===email)
@@ -92,7 +95,7 @@ app.post('/registration', (req, res) => {
 //             console.log(err)
 //         })
 //     }
-    usersArr.push(JSON.parse())
+    usersArr.push(name,password,email)
     console.log(usersArr)
     res.redirect('/users')
 })
