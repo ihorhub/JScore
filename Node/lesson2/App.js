@@ -1,55 +1,3 @@
-let usersArr = [
-    {
-        name: "Leanne Graham",
-        password: "Bret",
-        email: "Sincere@april.biz"
-    },
-    {
-        name: "Ervin Howell",
-        password: "Antonette",
-        email: "Shanna@melissa.tv"
-    },
-    {
-        name: "Clementine Bauch",
-        password: "Samantha",
-        email: "Nathan@yesenia.net"
-    },
-    {
-        name: "Patricia Lebsack",
-        password: "Karianne",
-        email: "Julianne.OConner@kory.org"
-    },
-    {
-        name: "Chelsey Dietrich",
-        password: "Kamren",
-        email: "Lucio_Hettinger@annie.ca"
-    },
-    {
-        name: "Mrs. Dennis Schulist",
-        password: "Leopoldo_Corkery",
-        email: "Karley_Dach@jasper.info"
-    },
-    {
-        name: "Kurtis Weissnat",
-        password: "Elwyn.Skiles",
-        email: "Telly.Hoeger@billy.biz"
-    },
-    {
-        name: "Nicholas Runolfsdottir V",
-        password: "Maxime_Nienow",
-        email: "Sherwood@rosamond.me"
-    },
-    {
-        name: "Glenna Reichert",
-        password: "Delphine",
-        email: "Chaim_McDermott@dana.io"
-    },
-    {
-        name: "Clementina DuBuque",
-        password: "Moriah.Stanton",
-        email: "Rey.Padberg@karina.biz"
-    }
-];
 
 
 const express = require('express');
@@ -57,7 +5,8 @@ const Hbs = require('express-handlebars');
 const app = express();
 const path = require('path');
 const fs=require('fs');
-const pathname=path.join(process.cwd(),'App.js');
+let usersArr=require('users')
+const pathname=path.join(process.cwd(),'users.js');
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -83,20 +32,25 @@ app.get('/login', (req, res) => {
     res.render('login')
 });
 app.post('/registration', (req, res) => {
-    const {name,password,email}=req.body;
-// як доступитися до userArr? неможу туди записати, і консоль лозі  бачу стрінга вертається, пробував парсити ,
-// без результатно..( незнаю всх можливостей і синтакзиз, а методом втику  не варіан..., хотілось би не списувати а самому,
+    const {name:name,password:password,email:email}=req.body;
+// як доступитися до userArr? неможу туди записати (ми на минулій лекції записували у файл, а тут зразу головний App
+// без результатно..( незнаю всх можливостей і синтакзиз, а методом втику  не варіан..., хотілось би навчитись і самому зробити  а не  списувати,...
 // це все що з лекції розібрав і сам написав,...далі  розумію що маю записати в масив, зробити перевірку...
 
-// fs.readFile(pathname,err => {
-//     const find=usersArr.find(value => value.email===email)
-//     if (!find){
-//         fs.writeFile(pathname,usersArr.push({name,password,email}),err => {
-//             console.log(err)
-//         })
-//     }
-    usersArr.push(name,password,email)
-    console.log(usersArr)
+fs.readFile(pathname,((err, data) => {
+    if (err) { res.redirect('/error')}
+     usersArr = JSON.parse(data);
+    let find=usersArr.find(value => value.email===email);
+
+
+    if (!find){
+        usersArr.push({name,password,email})
+    }
+        fs.writeFile(pathname,err => {
+            console.log(err)
+        })
+
+
     res.redirect('/users')
 })
 app.post('/login', (req, res) => {

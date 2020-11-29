@@ -34,19 +34,5 @@ let usersArr = [
         password: "Elwyn.Skiles",
         email: "Telly.Hoeger@billy.biz"
     },
-    {
-        name: "Nicholas Runolfsdottir V",
-        password: "Maxime_Nienow",
-        email: "Sherwood@rosamond.me"
-    },
-    {
-        name: "Glenna Reichert",
-        password: "Delphine",
-        email: "Chaim_McDermott@dana.io"
-    },
-    {
-        name: "Clementina DuBuque",
-        password: "Moriah.Stanton",
-        email: "Rey.Padberg@karina.biz"
-    }
 ];
+module.exports={usersArr}
