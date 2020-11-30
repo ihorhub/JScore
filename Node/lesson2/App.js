@@ -24,15 +24,19 @@ app.get('/users', (req, res) => {
         res.render('users', {users: userList})
     })
 });
+
 app.get('/error', (req, res) => {
     res.render('err')
 });
+
 app.get('/main', (req, res) => {
     res.render('main')
 });
+
 app.get('/registration', (req, res) => {
     res.render('registration')
 });
+
 app.get('/login', (req, res) => {
     res.render('login')
 });
