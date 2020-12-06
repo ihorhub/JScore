@@ -1,9 +1,9 @@
-const userService=require('../services/user.service')
+const userService = require('../services/user.service');
 
 module.exports = {
     createUser: async (req, res) => {
         try {
-            const { email, password, name } = req.body
+            const { email, password, name } = req.body;
             const create = await userService.insertUser(email, password, name);
             res.status(201).json(create);
         } catch (e) {
@@ -12,7 +12,6 @@ module.exports = {
     },
     updateUsers: async (req, res) => {
         try {
-
             const { userId } = req.params;
             const user = req.body;
             await userService.updateUser(user, userId);
@@ -25,7 +24,7 @@ module.exports = {
         }
     },
 
-    getUserById:async (req, res) => {
+    getUserById: async (req, res) => {
         try {
             const userId = req.query;
             const user = await userService.findUserById(userId);

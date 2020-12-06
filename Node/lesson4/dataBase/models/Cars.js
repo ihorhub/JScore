@@ -7,7 +7,7 @@ module.exports = (client, DataTypes) => {
                 primaryKey: true,
                 autoIncrement: true
             },
-           model: {
+            model: {
                 type: DataTypes.STRING,
                 allowNull: false
             },

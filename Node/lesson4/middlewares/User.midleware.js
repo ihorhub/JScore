@@ -1,23 +1,23 @@
-const userService = require('../services/user.service')
-const db = require('../dataBase').getInstance()
+const userService = require('../services/user.service');
+const db = require('../dataBase').getInstance();
 
 module.exports = {
     checkIfUserValid: (req, res, next) => {
         try {
-            const {email, password, name} = req.body;
+            const { email, password, name } = req.body;
 
-            if (!email || !password|| !name) {
-                throw new Error('User is not valid')
+            if (!email || !password || !name) {
+                throw new Error('User is not valid');
             }
             next();
         } catch (e) {
-            res.status(400).join(e.message)
+            res.status(400).join(e.message);
         }
     },
 
-    checkEmailValid:async (req, res, next) => {
+    checkEmailValid: async (req, res, next) => {
         try {
-            const {email} = req.params;
+            const { email } = req.params;
             const users = await userService.findUsers();
             const findUser = users.find((user) => user.email === email);
 
@@ -33,7 +33,7 @@ module.exports = {
 
     checkUserIdValidator: (req, res, next) => {
         try {
-            const {userId} = req.params;
+            const { userId } = req.params;
 
             if (userId < 1) {
                 throw new Error('think what number you enter');
@@ -44,4 +44,3 @@ module.exports = {
         }
     },
 };
-

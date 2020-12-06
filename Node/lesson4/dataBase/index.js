@@ -1,4 +1,3 @@
-
 // const mysql2 = require('mysql2');
 //
 // const connection = mysql2.createConnection({
@@ -11,7 +10,7 @@
 // module.exports = connection.promise();
 const fs = require('fs');
 const path = require('path');
-const {Sequelize, DataTypes} = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 
 module.exports = (() => {
     let instance;
