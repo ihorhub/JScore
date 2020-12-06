@@ -2,7 +2,7 @@ const { Router } = require('express');
 const {
     createUser, deleteUser, getUserById, getUsersWithCar, updateUsers
 } = require('../controllers/user.controller');
-const { userMiddleware } = require('../middlewares/index ');
+const { userMiddleware } = require('../middlewares');
 
 const userRouter = Router();
 
