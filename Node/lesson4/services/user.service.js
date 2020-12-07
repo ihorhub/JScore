@@ -1,7 +1,7 @@
 const db = require('../dataBase').getInstance();
 
 module.exports = {
-    findUsers: () => {
+    findUsers: (email) => {
         const UserModel = db.getModel('User');
         return UserModel.findAll({
             where: { email }
