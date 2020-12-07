@@ -18,10 +18,9 @@ module.exports = {
     checkEmailValid: async (req, res, next) => {
         try {
             const { email } = req.params;
-            const users = await userService.findUsers();
-            const findUser = users.find((user) => user.email === email);
+            const users = await userService.findUsers(email);
 
-            if (findUser) {
+            if (users) {
                 throw new Error('ERROR!!!! This User already exist');
             }
 
