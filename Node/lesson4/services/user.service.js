@@ -3,7 +3,9 @@ const db = require('../dataBase').getInstance();
 module.exports = {
     findUsers: () => {
         const UserModel = db.getModel('User');
-        return UserModel.findAll();
+        return UserModel.findAll({
+            where: { email }
+        });
     },
 
     insertUser: (user) => {
