@@ -18,8 +18,8 @@ module.exports = {
           'cars',
           test.cars
       );
-    };
-  },
+    },
+
 
   down: async (queryInterface, Sequelize) => {
     /**
@@ -32,6 +32,6 @@ module.exports = {
     await queryInterface.bulkDelete('users');
 
     await queryInterface.bulkDelete('cars');
-  }
-  }
-};
+  },
+
+}
