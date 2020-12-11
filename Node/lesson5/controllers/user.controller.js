@@ -12,6 +12,7 @@ const { ErrorHandler, errors: { CREATE_BODY} } = require('../error');
             next(e);
         }
     },
+
     updateUsers: async (req, res) => {
         try {
             const { userId } = req.params;
