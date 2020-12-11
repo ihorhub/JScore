@@ -49,7 +49,7 @@ module.exports={
                 throw new ErrorHandler(NOT_VALID_BODY.message,NOT_VALID_BODY.code);
             }
             if (!name || name.length<2){
-                throw new ErrorHandler(NOT_VALID_BODY.message,NOT_VALID_BODY.code;
+                throw new ErrorHandler(NOT_VALID_BODY.message,NOT_VALID_BODY.code);
             }
             if (!password || password.length<4){
                 throw new ErrorHandler (NOT_VALID_BODY.message,NOT_VALID_BODY.code);
