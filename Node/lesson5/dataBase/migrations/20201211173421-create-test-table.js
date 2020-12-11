@@ -9,15 +9,9 @@ module.exports = {
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-      await queryInterface.bulkInsert(
-          'users',
-          test.users
-      );
+      await queryInterface.bulkInsert('users', test.users);
 
-      await queryInterface.bulkInsert(
-          'cars',
-          test.cars
-      );
+      await queryInterface.bulkInsert('cars', test.cars);
     },
 
 
