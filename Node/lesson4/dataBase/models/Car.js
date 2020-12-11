@@ -3,7 +3,7 @@ module.exports = (client, DataTypes) => {
         'Car',
         {
             id: {
-                type: DataTypes.INT,
+                type: DataTypes.INTEGER,
                 primaryKey: true,
                 autoIncrement: true
             },
@@ -12,15 +12,16 @@ module.exports = (client, DataTypes) => {
                 allowNull: false
             },
             price: {
-                type: DataTypes.INT,
+                type: DataTypes.INTEGER,
                 allowNull: false
             },
             year: {
-                type: DataTypes.INT,
+                type: DataTypes.INTEGER,
                 allowNull: false
             },
             user_id: {
-                type: DataTypes.INT,
+                type: DataTypes.INTEGER,
+                allowNull: false,
                 foreignKey: true
             },
         },
@@ -30,8 +31,8 @@ module.exports = (client, DataTypes) => {
         }
     );
 
-    const User = require('./User')(client, DataTypes);
-    Car.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
+    // const User = require('./User')(client, DataTypes);
+    // Car.belongsTo(User, { as: 'user',foreignKey: 'user_id',onDelete:'cascade'  });
 
     return Car;
 };

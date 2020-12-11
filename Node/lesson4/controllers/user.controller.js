@@ -1,13 +1,14 @@
-const userService = require('../services/user.service');
+const {userService} = require('../services/user.service');
 
 module.exports = {
     createUser: async (req, res) => {
         try {
-            const { email, password, name } = req.body;
-            const create = await userService.insertUser(email, password, name);
-            res.status(201).json(create);
+            // const { email, password, name } = req.body;
+            const create = await userService.insertUser(req.body);
+
+            res.sendStatus(201).json(create);
         } catch (e) {
-            res.json(e.message);
+            res.status(400).json(e.message);
         }
     },
     updateUsers: async (req, res) => {
@@ -26,8 +27,7 @@ module.exports = {
 
     getUserById: async (req, res) => {
         try {
-            const userId = req.query;
-            const user = await userService.findUserById(userId);
+            const user = req.user;
 
             res.status(200).json(user);
         } catch (e) {
@@ -37,7 +37,11 @@ module.exports = {
 
     getUsersWithCar: async (req, res) => {
         try {
-            const UsersWithCars = await userService.findUsersWithCars();
+            const {limit=10, page=1,...where}=req.query;
+            const offset=limit*(page-1) ;
+
+            const UsersWithCars = await userService.findUsersWithCars(where, +limit, +offset);
+
             res.status(200).json(UsersWithCars);
         } catch (e) {
             res.status(400).json(e.message);

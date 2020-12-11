@@ -2,10 +2,9 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const db = require('./dataBase').getInstance();
-
 const app = express();
 
-db.setModels();
+db.getInstance().setModels();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

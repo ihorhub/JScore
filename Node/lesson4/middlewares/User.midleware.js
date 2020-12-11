@@ -2,25 +2,13 @@ const userService = require('../services/user.service');
 const db = require('../dataBase').getInstance();
 
 module.exports = {
-    checkIfUserValid: (req, res, next) => {
+
+    checkIsRegisterEmail: async (req, res, next) => {
         try {
-            const { email, password, name } = req.body;
+            const { email } = req.body;
+            const [user] = await userService.findUsersWithCars({email},1);
 
-            if (!email || !password || !name) {
-                throw new Error('User is not valid');
-            }
-            next();
-        } catch (e) {
-            res.status(400).join(e.message);
-        }
-    },
-
-    checkEmailValid: async (req, res, next) => {
-        try {
-            const { email } = req.params;
-            const users = await userService.findUsers(email);
-
-            if (users) {
+            if (user) {
                 throw new Error('ERROR!!!! This User already exist');
             }
 
@@ -30,13 +18,16 @@ module.exports = {
         }
     },
 
-    checkUserIdValidator: (req, res, next) => {
+    checkIsRegisterId: async (req, res, next) => {
         try {
             const { userId } = req.params;
+            const user =  await userService.findUserById(userId);
 
-            if (userId < 1) {
-                throw new Error('think what number you enter');
+            if (!user) {
+                throw new Error('user is not present');
             }
+            req.user = user
+
             next();
         } catch (e) {
             res.status(400).json(e.message);

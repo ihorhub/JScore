@@ -1,12 +1,12 @@
 const db = require('../dataBase').getInstance();
 
 module.exports = {
-    findUsers: (email) => {
-        const UserModel = db.getModel('User');
-        return UserModel.findAll({
-            where: { email }
-        });
-    },
+    // findUsers: (email) => {
+    //     const UserModel = db.getModel('User');
+    //     return UserModel.findAll({
+    //         where: { email }
+    //     });
+    // },
 
     insertUser: (user) => {
         const UserModel = db.getModel('User');
@@ -15,8 +15,10 @@ module.exports = {
 
     findUserById: (userId) => {
         const UserModel = db.getModel('User');
-        return UserModel.findByPk(userId);
+        const CarModel = db.getModel('Car')
+        return UserModel.findByPk(userId,{include:CarModel});
     },
+
     updateUser: (user, userId) => {
         const UserModel = db.getModel('User');
         return UserModel.update(user, {
@@ -26,11 +28,14 @@ module.exports = {
         });
     },
 
-    findUsersWithCars: () => {
+    findUsersWithCars: (where:{}, limit:=10,offset:=0) => {
         const UserModel = db.getModel('User');
         const CarModel = db.getModel('Car');
-        return CarModel.findAll({
-            include: [{ model: UserModel, as: 'user' }]
+        return UserModel.findAll({
+            where,
+            limit,
+            offset,
+            include: [{ model: CarModel }]
         });
     },
 

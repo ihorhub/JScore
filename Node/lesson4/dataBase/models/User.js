@@ -3,7 +3,7 @@ module.exports = (client, DataTypes) => {
         'User',
         {
             id: {
-                type: DataTypes.INT,
+                type: DataTypes.INTEGER,
                 primaryKey: true,
                 autoIncrement: true
             },
@@ -26,6 +26,8 @@ module.exports = (client, DataTypes) => {
             timestamps: false
         }
     );
+    const Car = require('./Car')(client, DataTypes);
+    User.hasMany(Car,{foreignKey: 'user_id',onDelete:'cascade'});
 
     return User;
 };
