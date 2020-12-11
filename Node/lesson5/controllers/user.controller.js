@@ -18,7 +18,7 @@ const { ErrorHandler, errors: { CREATE_BODY} } = require('../error');
             const user = req.body;
             await userService.updateUser(user, userId);
 
-            res.status(200).json({
+            res.json({
                 message: 'Updated'
             });
         } catch (e) {
@@ -30,7 +30,7 @@ const { ErrorHandler, errors: { CREATE_BODY} } = require('../error');
         try {
             const user = req.user;
 
-            res.status(200).json(user);
+            res.json(user);
         } catch (e) {
             next(e);
         }
@@ -43,7 +43,7 @@ const { ErrorHandler, errors: { CREATE_BODY} } = require('../error');
 
             const UsersWithCars = await userService.findUsersWithCars(where, +limit, +offset);
 
-            res.status(200).json(UsersWithCars);
+            res.json(UsersWithCars);
         } catch (e) {
             next(e);
         }
@@ -54,7 +54,7 @@ const { ErrorHandler, errors: { CREATE_BODY} } = require('../error');
             const { userId } = req.params;
             const user = await userService.deleteUser(userId);
 
-            res.status(200).json('User deleted');
+            res.json('User deleted');
         } catch (e) {
             next(e);
         }
