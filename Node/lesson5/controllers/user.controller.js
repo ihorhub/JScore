@@ -1,14 +1,15 @@
 const {userService} = require('../services/user.service');
+const { ErrorHandler, errors: { CREATE_BODY} } = require('../error');
 
-module.exports = {
-    createUser: async (req, res) => {
+    module.exports = {
+    createUser: async (req, res,next) => {
         try {
             // const { email, password, name } = req.body;
             const create = await userService.insertUser(req.body);
 
-            res.sendStatus(201).json(create);
+            res.sendStatus(ErrorHandler(CREATE_BODY.message,CREATE_BODY.code);
         } catch (e) {
-            res.status(400).json(e.message);
+            next(e);
         }
     },
     updateUsers: async (req, res) => {
@@ -21,7 +22,7 @@ module.exports = {
                 message: 'Updated'
             });
         } catch (e) {
-            res.status(404).json(e.message);
+            next(e);
         }
     },
 
@@ -31,7 +32,7 @@ module.exports = {
 
             res.status(200).json(user);
         } catch (e) {
-            res.status(400).json(e.message);
+            next(e);
         }
     },
 
@@ -44,7 +45,7 @@ module.exports = {
 
             res.status(200).json(UsersWithCars);
         } catch (e) {
-            res.status(400).json(e.message);
+            next(e);
         }
     },
 
@@ -55,7 +56,7 @@ module.exports = {
 
             res.status(200).json('User deleted');
         } catch (e) {
-            res.status(404).json(e.message);
+            next(e);
         }
     },
 };
