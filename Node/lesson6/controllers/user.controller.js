@@ -1,7 +1,7 @@
-const {userService} = require('../services/user.service');
-const { ErrorHandler, errors: { CREATE_BODY} } = require('../error');
+const { userService } = require('../services/user.service');
+const { ErrorHandler, errors: { CREATE_BODY } } = require('../error');
 
-    module.exports = {
+module.exports = {
     createUser: async (req, res, next) => {
         try {
             // const { email, password, name } = req.body;
@@ -29,7 +29,7 @@ const { ErrorHandler, errors: { CREATE_BODY} } = require('../error');
 
     getUserById: (req, res, next) => {
         try {
-            const user = req.user;
+            const { user } = req;
 
             res.json(user);
         } catch (e) {
@@ -39,8 +39,8 @@ const { ErrorHandler, errors: { CREATE_BODY} } = require('../error');
 
     getUsersWithCar: async (req, res, next) => {
         try {
-            const {limit=10, page=1,...where}=req.query;
-            const offset=limit*(page-1) ;
+            const { limit = 10, page = 1, ...where } = req.query;
+            const offset = limit * (page - 1);
 
             const UsersWithCars = await userService.findUsersWithCars(where, +limit, +offset);
 

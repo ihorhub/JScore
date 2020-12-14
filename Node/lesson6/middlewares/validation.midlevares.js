@@ -1,38 +1,27 @@
-const {ErrorHandler, errors: {NOT_VALID_BODY, UNAUTHORIZED_BODY, NOT_VALID_ID, CREATE_BODY}} = require('../error');
+const { ErrorHandler, errors: { NOT_VALID_BODY, NOT_VALID_ID, WRONG_EMAIL_OR_PASS } } = require('../error');
 const userService = require('../services/user.service');
 const db = require('../dataBase').getInstance();
+const { joiUserUpdateValidator, joiUserIdValidator, joiUserValidator } = require('../validators');
 
 module.exports = {
-
-    isIdCorrect: (req, res, next) => {
+    joiUserIdValid: (req, res, next) => {
         try {
-            const {userId} = req.params
+            const { userId } = req.params;
+            const { error } = joiUserIdValidator.validate(userId);
 
-            if (!userId || userId < 0 || !Number.isInteger(+userId)) {
-                throw new ErrorHandler(NOT_VALID_ID.message, NOT_VALID_ID.code)
-            }
+            if (error) throw new ErrorHandler(error.details[0].message, WRONG_EMAIL_OR_PASS);
 
             next();
         } catch (e) {
-            next(e)
+            next(e);
         }
     },
-
-    isUserUpdateCorrect: (req, res, next) => {
+    joiUserValid: (req, res, next) => {
         try {
-            const {email, name, password, ...other} = req.body
+            const { error } = joiUserValidator.validate(req.body);
 
-            if (email && email.length < 5) {
-                throw new ErrorHandler(NOT_VALID_BODY.message, NOT_VALID_BODY.code);
-            }
-            if (name && name.length < 2) {
-                throw new ErrorHandler(NOT_VALID_BODY.message, NOT_VALID_BODY.code);
-            }
-            if (password && password.length < 4) {
-                throw new ErrorHandler(NOT_VALID_BODY.message, NOT_VALID_BODY.code);
-            }
-            if (Object.values(other).length) {
-                throw new ErrorHandler(NOT_VALID_BODY.message, NOT_VALID_BODY.code);
+            if (error) {
+                throw new ErrorHandler(error.details[0].message, WRONG_EMAIL_OR_PASS);
             }
 
             next();
@@ -40,22 +29,12 @@ module.exports = {
             next(e);
         }
     },
-
-    isUserCreateCorrect: (req, res, next) => {
+    joiUserUpdateValid: (req, res, next) => {
         try {
-            const {email, name, password, ...other} = req.body
+            const { error } = joiUserUpdateValidator.validate(req.body);
 
-            if (!email || email.length < 5) {
-                throw new ErrorHandler(NOT_VALID_BODY.message, NOT_VALID_BODY.code);
-            }
-            if (!name || name.length < 2) {
-                throw new ErrorHandler(NOT_VALID_BODY.message, NOT_VALID_BODY.code);
-            }
-            if (!password || password.length < 4) {
-                throw new ErrorHandler(NOT_VALID_BODY.message, NOT_VALID_BODY.code);
-            }
-            if (Object.values(other).length) {
-                throw new ErrorHandler(NOT_VALID_BODY.message, NOT_VALID_BODY.code);
+            if (error) {
+                throw new ErrorHandler(error.details[0].message, WRONG_EMAIL_OR_PASS);
             }
 
             next();
@@ -64,4 +43,4 @@ module.exports = {
         }
     }
 
-}
+};

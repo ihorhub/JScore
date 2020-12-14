@@ -1,4 +1,4 @@
-module.exports={
-    users:[],
-    cars:[]
-}
+module.exports = {
+    users: [],
+    cars: []
+};

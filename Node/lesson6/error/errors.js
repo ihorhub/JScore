@@ -1,4 +1,6 @@
-const { BAD_REQUEST, FORBIDDEN,CREATED,DELETE,NOT_FOUND,UNAUTHORIZED } = require('../configs/errors-code');
+const {
+    BAD_REQUEST, FORBIDDEN, CREATED, DELETE, NOT_FOUND, UNAUTHORIZED
+} = require('../configs/errors-code');
 
 module.exports = {
     NOT_VALID_ID: {
@@ -11,24 +13,24 @@ module.exports = {
         code: FORBIDDEN
     },
 
-    DELETE_BODY:{
-        message:'delete',
-        code:DELETE
+    DELETE_BODY: {
+        message: 'delete',
+        code: DELETE
     },
 
-    CREATE_BODY:{
-        message:'Created',
-        code:CREATED
+    CREATE_BODY: {
+        message: 'Created',
+        code: CREATED
     },
 
-    UNAUTHORIZED_BODY:{
-        message:'Unauthorized access',
-        code:UNAUTHORIZED
+    UNAUTHORIZED_BODY: {
+        message: 'Unauthorized access',
+        code: UNAUTHORIZED
     },
 
-    NOT_FOUND_BODY:{
-        message:'This resource not_found',
-        code:NOT_FOUND
+    NOT_FOUND_BODY: {
+        message: 'This resource not_found',
+        code: NOT_FOUND
     },
     WRONG_EMAIL_OR_PASS: {
         message: 'Email or password is not valid',
