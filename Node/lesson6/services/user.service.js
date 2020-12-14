@@ -39,5 +39,12 @@ module.exports = {
                 userId
             }
         });
+    },
+    findUserByParams: (findObj) => {
+        const UserModel = db.getModel('User');
+
+        return UserModel.findOne({
+            where: findObj
+        });
     }
 };
