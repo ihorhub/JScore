@@ -9,17 +9,17 @@ const app = express();
 
 db.setModels();
 
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const {userRouter, authRouter, carRouter} = require('./routes');
+const { userRouter, authRouter, carRouter } = require('./routes');
 
 app.use('/users', userRouter);
 app.use('/auth', authRouter);
 app.use('/car', carRouter);
 app.use('*', (err, req, res, next) => {
     res
-        .status(err.code)
+        .status(err.code || 500)
         .json({
             message: err.message,
             ok: false

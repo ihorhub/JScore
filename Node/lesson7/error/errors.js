@@ -1,5 +1,5 @@
 const {
-    BAD_REQUEST, FORBIDDEN, CREATED, DELETE, NOT_FOUND, UNAUTHORIZED
+    BAD_REQUEST, FORBIDDEN, CREATED, DELETE, NOT_FOUND, UNAUTHORIZED, NO_CONTENT
 } = require('../configs/errors-code');
 
 module.exports = {
@@ -39,6 +39,10 @@ module.exports = {
     PERMISSION_DENIED: {
         message: 'Permission denied',
         code: FORBIDDEN
+    },
+    NO_CONTENTS: {
+        message: 'empy content',
+        code: NO_CONTENT
     }
 
 };

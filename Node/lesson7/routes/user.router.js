@@ -9,7 +9,7 @@ userRouter.post('/', userMiddleware.checkIsRegisterEmail,
     userValidatorMiddleware.joiUserValid,
     checkAccessToken.accessToken, userController.createUser);
 
-userRouter.use('/userId', userValidatorMiddleware.joiUserIdValid, userMiddleware.checkIsUserRegisterId);
+userRouter.use('/:userId', userValidatorMiddleware.joiUserIdValid, userMiddleware.checkIsUserRegisterId);
 
 userRouter.put('/:userId', userValidatorMiddleware.joiUserUpdateValid,
     checkAccessToken.accessToken, userController.updateUsers);

@@ -4,5 +4,6 @@ module.exports = {
     checkPasswordHash: require('./check-password-hash'),
     carsMiddleware: require('./Car.middlewaresa'),
     carsValidatorMiddleware: require('./cars-vaidation.middlewarwes'),
-    checkAccessToken: require('./chech-access-token.middleware')
+    checkAccessToken: require('./chech-access-token.middleware'),
+    checkRefreshToken: require('./check-refresh-token.middleware')
 };
