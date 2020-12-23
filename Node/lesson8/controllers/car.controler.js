@@ -33,8 +33,6 @@ module.exports = {
                 await photos.mv(path.join(photoDir, photoName));
             const createCar = await CarService.insertCar(car );
 
-
-
         }
             if (documents) {
                 const pathWithoutPublic = path.join('car', `${createCar.id}`, 'documents');
@@ -45,10 +43,12 @@ module.exports = {
                 await fs.mkdir(docDir, { recursive: true });
                 await photos.mv(path.join(docDir, docName));
 
-            res.status(CREATE_BODY).json(createCar);catch (e) {
-            next(e)
+    }
+            res.status(CREATE_BODY).json(createCar);
         }
-    },
+    catch (e) {
+                next(e)
+            }
 
     deleteCar: async (req, res, next) => {
         try {
