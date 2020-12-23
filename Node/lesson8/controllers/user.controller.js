@@ -49,7 +49,7 @@ module.exports = {
                 await avatar.mv(path.join(photoDir, photoName));
                 req.user.avatar = finalPhotoPath;
 
-                await userService.updateUserById(user, userId);
+                await userService.updateUserById(req.user, userId);
             }
 
 

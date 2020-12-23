@@ -8,6 +8,7 @@ module.exports = {
 
     getAllCars: async (req, res, next) => {
         try {
+            const
             const car = await CarService.findCarsByParams();
 
             res.json(car);
