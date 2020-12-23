@@ -31,11 +31,21 @@ module.exports = {
                 const finalPhotoPath = path.join(pathWithoutPublic, photoName);
                 await fs.mkdir(photoDir, { recursive: true });
                 await photos.mv(path.join(photoDir, photoName));
-            const createCar = await CarService.insertCar(car);
+            const createCar = await CarService.insertCar(car );
 
-            res.status(CREATE_BODY).json(createCar);
 
-        } catch (e) {
+
+        }
+            if (documents) {
+                const pathWithoutPublic = path.join('car', `${createCar.id}`, 'documents');
+                const docDir = path.join(process.cwd(), 'public', pathWithoutPublic);
+                const fileExtension = documents.name.split('.').pop();
+                const docName = `${uuid}.${fileExtension}`;
+                const finalPhotoPath = path.join(pathWithoutPublic, docName);
+                await fs.mkdir(docDir, { recursive: true });
+                await photos.mv(path.join(docDir, docName));
+
+            res.status(CREATE_BODY).json(createCar);catch (e) {
             next(e)
         }
     },
