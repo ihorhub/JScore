@@ -1,0 +1,7 @@
+
+module.exports = {
+    ACCESS_TOKEN_SECRET: process.env.ACCESS_TOKEN_SERCER,
+    REFRESH_TOKEN_SECRET: process.env.REFRESH_TOKEN_SECRET,
+    DB_USERNAME: process.env.SEQUELIZE_USERNAME,
+    DB_PASSWORD: process.env.SEQUELIZE_PASSWORD,
+};
