@@ -8,7 +8,7 @@ module.exports = {
 
     getAllCars: async (req, res, next) => {
         try {
-            const
+
             const car = await CarService.findCarsByParams();
 
             res.json(car);
@@ -22,6 +22,15 @@ module.exports = {
         try {
             const car = req.body;
             const { photos, documents } = req
+
+            if (photos) {
+                const pathWithoutPublic = path.join('car', `${createCar.id}`, 'photos');
+                const photoDir = path.join(process.cwd(), 'public', pathWithoutPublic);
+                const fileExtension = photos.name.split('.').pop();
+                const photoName = `${uuid}.${fileExtension}`;
+                const finalPhotoPath = path.join(pathWithoutPublic, photoName);
+                await fs.mkdir(photoDir, { recursive: true });
+                await photos.mv(path.join(photoDir, photoName));
             const createCar = await CarService.insertCar(car);
 
             res.status(CREATE_BODY).json(createCar);
