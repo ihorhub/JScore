@@ -3,6 +3,8 @@ module.exports = {
     AUTHORIZATION: 'Authorization',
     PHOTO_MAX_SIZE: 2 * 1024 * 1024,
     FILE_MAX_SIZE: 5 * 1024 * 1024,
+    FILE_MAX_QOUNTITY: 5,
+    PHOTO_MAX_QOUNTITY: 5,
     PHOTOS_MIMETYPES: [
         'image/gif',
         'image/jpeg',
