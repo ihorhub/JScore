@@ -46,7 +46,7 @@ module.exports = {
                 const fileExtension = avatar.name.split('.').pop();
                 const photoName = `${uuid}.${fileExtension}`;
                 const finalPhotoPath = path.join(pathWithoutPublic, photoName);
-                await fs1.rmdir(path.join(photoDir), { recursive: true })
+                await fs1.unlink(path.join(photoName), { recursive: true })
                 await fs1.mkdir(photoDir, { recursive: true });
                 await avatar.mv(path.join(photoDir, photoName));
                 req.user.avatar = finalPhotoPath;
