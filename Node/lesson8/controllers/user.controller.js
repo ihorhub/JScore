@@ -1,6 +1,7 @@
 const fs = require('fs-extra').promises;
-const uuid = require('uuid').v1(),
-const { userService } = require('../services');
+const fs1 = require('fs');
+const uuid = require('uuid').v1();
+const {userService,emailService} = require('../services');
 const { ErrorHandler, errors: { CREATE_BODY } } = require('../error');
 const { hash } = require('../helper/passwors.helper');
 
@@ -23,11 +24,12 @@ module.exports = {
                 const photoName = `${uuid}.${fileExtension}`;
                 const finalPhotoPath = path.join(pathWithoutPublic, photoName);
 
-                await fs.mkdir(photoDir, { recursive: true });
+                await fs1.mkdir(photoDir, { recursive: true });
                 await avatar.mv(path.join(photoDir, photoName));
 
                 await userService.updateUserById(createUser.id, { avatar: finalPhotoPath });
             }
+            await emailService.sendMail(email, WELCOME, { userName: name };
             res.status(CREATE_BODY).json(create);
         } catch (e) {
             next(e);
@@ -44,8 +46,8 @@ module.exports = {
                 const fileExtension = avatar.name.split('.').pop();
                 const photoName = `${uuid}.${fileExtension}`;
                 const finalPhotoPath = path.join(pathWithoutPublic, photoName);
-                await fs.rmdir(path.join(photoDir), { recursive: true })
-                await fs.mkdir(photoDir, { recursive: true });
+                await fs1.rmdir(path.join(photoDir), { recursive: true })
+                await fs1.mkdir(photoDir, { recursive: true });
                 await avatar.mv(path.join(photoDir, photoName));
                 req.user.avatar = finalPhotoPath;
 
