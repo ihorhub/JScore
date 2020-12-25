@@ -1,5 +1,4 @@
 const fs = require('fs-extra').promises;
-const fs1 = require('fs');
 const uuid = require('uuid').v1();
 const {userService,emailService} = require('../services');
 const { ErrorHandler, errors: { CREATE_BODY } } = require('../error');
@@ -23,8 +22,7 @@ module.exports = {
                 const fileExtension = avatar.name.split('.').pop();
                 const photoName = `${uuid}.${fileExtension}`;
                 const finalPhotoPath = path.join(pathWithoutPublic, photoName);
-
-                await fs1.mkdir(photoDir, { recursive: true });
+                await fs.mkdir(photoDir, { recursive: true });
                 await avatar.mv(path.join(photoDir, photoName));
 
                 await userService.updateUserById(createUser.id, { avatar: finalPhotoPath });
@@ -46,14 +44,13 @@ module.exports = {
                 const fileExtension = avatar.name.split('.').pop();
                 const photoName = `${uuid}.${fileExtension}`;
                 const finalPhotoPath = path.join(pathWithoutPublic, photoName);
-                await fs1.unlink(path.join(photoName), { recursive: true })
-                await fs1.mkdir(photoDir, { recursive: true });
+                await fs.rmdir(path.join(pathWithoutPublic), { recursive: true });
+                await fs.mkdir(photoDir, { recursive: true });
                 await avatar.mv(path.join(photoDir, photoName));
                 req.user.avatar = finalPhotoPath;
 
                 await userService.updateUserById(req.user, userId);
             }
-
 
             res.json({
                 message: 'Updated'
@@ -87,8 +84,10 @@ module.exports = {
 
     deleteUser: async (req, res, next) => {
         try {
-            const { userId } = req.params;
-            const user = await userService.deleteUser(userId);
+            const { userId,id } = req.params;
+             await userService.deleteUser(userId);
+            const userDir = path.join(process.cwd(), 'public', 'user', `${id}`);
+            fs.rmdir(userDir, { recursive: true });
 
             res.json('User deleted');
         } catch (e) {
