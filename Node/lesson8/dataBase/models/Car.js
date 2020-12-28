@@ -25,7 +25,10 @@ module.exports = (client, DataTypes) => {
                 allowNull: false,
                 foreignKey: true
             },
-            avatar: {
+            photos: {
+                type: DataTypes.STRING
+            },
+            documents: {
                 type: DataTypes.STRING
             },
         },

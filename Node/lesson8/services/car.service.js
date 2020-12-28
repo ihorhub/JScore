@@ -21,7 +21,11 @@ module.exports = {
     updateCar: (car, id) => {
         const CarModel = db.getModel('Car');
         return CarModel.update('car',
-            { where: { id } });
+            {
+                where: { id },
+                returning: true,
+                plain: true
+            });
     },
     findCarById: (іd) => {
         const CarModel = db.getModel('Car');
