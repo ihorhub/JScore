@@ -3,15 +3,18 @@ const fileUpload = require('express-fileupload');
 const path = require('path');
 const fs = require('fs');
 const mongoose = require('mongoose');
+const { MONGO_DB_URI } = require('./configs/config');
 
 require('dotenv').config();
 
 const db = require('./dataBase').getInstance();
-const cronRun = require('./cron-jobs');
+const cronRun = require('./cron-jobs/removeExpiredRefreshTokens');
+
 const app = express();
 
 db.setModels();
-_connectDB()
+// eslint-disable-next-line no-use-before-define
+_connectDB();
 app.use(fileUpload());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -34,7 +37,7 @@ app.use('*', (err, req, res, next) => {
 
 app.listen(5000, () => {
     console.log('App 5000');
-    cronRun()
+    cronRun();
 });
 // eslint-disable-next-line no-underscore-dangle
 function _connectDB() {
