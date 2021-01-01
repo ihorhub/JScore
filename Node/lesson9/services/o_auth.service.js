@@ -1,7 +1,9 @@
 const db = require('../dataBase').getInstance();
+const { CHECK_REFRESH_TOKEN_TIME } = require('../constans/constans');
+const { Op } = require('sequelize');
 
 module.exports = {
-    createTokenPair: (tokenPair,transaction) => {
+    createTokenPair: (tokenPair, transaction) => {
         const OAuthModel = db.getModel('O_Auth');
 
         return OAuthModel.create(tokenPair, transaction);
@@ -18,11 +20,11 @@ module.exports = {
             }
         });
     },
-    deleteToken: (accessToken , transaction) => {
+    deleteToken: (accessToken, transaction) => {
         const OAuthModel = db.getModel('O_Auth');
 
         return OAuthModel.destroy({
-            where: {access_token: accessToken},  transaction
+            where: { access_token: accessToken }, transaction
         });
     },
     deleteTokenById: (id, transaction) => {
@@ -30,6 +32,17 @@ module.exports = {
 
         return OAuthModel.destroy({
             where: { id }, transaction
+        });
+    },
+    removeExpiredRefreshTokens: () => {
+        const OAuthModel = db.getModel('O_Auth');
+
+        return OAuthModel.destroy({
+            where: {
+                created_at: {
+                    [Op.gt]: new Date(new Date() - CHECK_REFRESH_TOKEN_TIME)
+                }
+            }
         });
     }
 

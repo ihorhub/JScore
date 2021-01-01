@@ -15,14 +15,14 @@ userRouter.post('/',
 
 userRouter.use('/:userId', userValidatorMiddleware.joiUserIdValid, userMiddleware.checkIsUserRegisterId);
 
-userRouter.put('/:userId', userValidatorMiddleware.joiUserUpdateValid,
-    checkAccessToken.accessToken, userController.updateUsers);
+userRouter.put('/:userId',
+    userValidatorMiddleware.joiUserUpdateValid,
+    checkAccessToken.accessToken,
+    userController.updateUsers);
 userRouter.get('/:userId', userController.getUserById);
 userRouter.delete('/:userId', checkAccessToken.accessToken, userController.deleteUser);
 
 module.exports = userRouter;
 
 
-// в мене хрестини, бігаю від неділі... от сьогодні пару годин знайшов час,
-// хоч попередню і сьогоднішню лекцію подивитись...
-// хочу то все в повній мірі зрозуміти... але як є то є.. червоне то червоне..
+

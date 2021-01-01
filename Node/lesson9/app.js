@@ -2,14 +2,16 @@ const express = require('express');
 const fileUpload = require('express-fileupload');
 const path = require('path');
 const fs = require('fs');
+const mongoose = require('mongoose');
+
 require('dotenv').config();
 
 const db = require('./dataBase').getInstance();
-
+const cronRun = require('./cron-jobs');
 const app = express();
 
 db.setModels();
-
+_connectDB()
 app.use(fileUpload());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -32,4 +34,14 @@ app.use('*', (err, req, res, next) => {
 
 app.listen(5000, () => {
     console.log('App 5000');
+    cronRun()
 });
+// eslint-disable-next-line no-underscore-dangle
+function _connectDB() {
+    mongoose.connect(encodeURI(MONGO_DB_URI), { useNewUrlParser: true, useUnifiedTopology: true });
+    const connect = mongoose.connection;
+
+    connect.on('error', (error) => {
+        console.log(error);
+    });
+}

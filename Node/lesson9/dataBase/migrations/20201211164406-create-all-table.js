@@ -1,4 +1,4 @@
-const {DataTypes} = require('sequelize');
+const { DataTypes } = require('sequelize');
 
 module.exports = {
     up: async (queryInterface, Sequelize) => {
@@ -96,46 +96,44 @@ module.exports = {
                 }
             }
         });
-            await queryInterface.createTable('o_auth', {
-                id: {
-                    type: Sequelize.INTEGER,
-                    primaryKey: true,
-                    autoIncrement: true
-                },
-                access_token: {
-                    type: Sequelize.STRING,
-                    allowNull: false
-                },
-                refresh_token: {
-                    type: Sequelize.STRING,
-                    allowNull: false,
-                },
-                user_id: {
-                    type: Sequelize.INTEGER,
-                    allowNull: false,
-                    foreignKey: true,
-                    onDelete: 'CASCADE',
-                    onUpdate: 'CASCADE',
-                    references: {
-                        model: 'users',
-                        as: 'user',
-                        key: 'id'
-                    }
-                },
-                created_at: {
-                    type: Sequelize.DATE,
-                    default: Sequelize.NOW
+        await queryInterface.createTable('o_auth', {
+            id: {
+                type: Sequelize.INTEGER,
+                primaryKey: true,
+                autoIncrement: true
+            },
+            access_token: {
+                type: Sequelize.STRING,
+                allowNull: false
+            },
+            refresh_token: {
+                type: Sequelize.STRING,
+                allowNull: false,
+            },
+            user_id: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                foreignKey: true,
+                onDelete: 'CASCADE',
+                onUpdate: 'CASCADE',
+                references: {
+                    model: 'users',
+                    as: 'user',
+                    key: 'id'
                 }
+            },
+            created_at: {
+                type: Sequelize.DATE,
+                defaultValue: Sequelize.fn('NOW')
+            }
 
-            });
+        });
     },
 
-
-down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('cars');
-    await queryInterface.dropTable('users');
-    await queryInterface.dropTable('user_2_car');
-    await queryInterface.dropTable('o_auth')
-}
-}
-;
+    down: async (queryInterface, Sequelize) => {
+        await queryInterface.dropTable('cars');
+        await queryInterface.dropTable('users');
+        await queryInterface.dropTable('user_2_car');
+        await queryInterface.dropTable('o_auth');
+    }
+};
